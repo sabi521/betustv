@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon / Spade" clip-path="url(#clip0_0_235)">
+<path id="Vector" d="M10 15C8.75 16.25 7.75 16.6667 6.25 16.6667C5.03442 16.6667 3.86864 16.1838 3.00909 15.3242C2.58349 14.8986 2.24589 14.3934 2.01555 13.8373C1.78522 13.2812 1.66667 12.6852 1.66667 12.0833C1.66667 10.1667 2.91667 8.75 4.16667 7.5L10 1.66667L15.8333 7.5C17.0833 8.75 18.3333 10.1667 18.3333 12.0833C18.3333 12.6852 18.2148 13.2812 17.9844 13.8373C17.7541 14.3934 17.4165 14.8986 16.9909 15.3242C16.5653 15.7498 16.06 16.0874 15.504 16.3178C14.9479 16.5481 14.3519 16.6667 13.75 16.6667C12.25 16.6667 11.25 16.25 10 15ZM10 15V18.3333" stroke="var(--stroke-0, white)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_235">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -2,12 +2,1594 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BetusTV</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>BetUS TV — Home</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <!-- =====================================================================
+         Home page. Header and footer are global (backend-owned) — this file
+         is the page body only.
+
+         Each list is written once per item. A "REPEAT" comment marks where a
+         foreach goes; real data decides how many cards there are.
+         ===================================================================== -->
+
+    <!-- =====================================================================
+         Odds ticker
+         ===================================================================== -->
+    <section class="w-full border-t border-border-card bg-surface py-[7px] md:border-t-0 md:py-3">
+      <div class="mx-auto flex max-w-[1430px] items-center gap-2 px-3 md:gap-[18px] md:px-4">
+        <div class="slider relative min-w-0 flex-1">
+          <div class="slider-track flex gap-1 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar [-webkit-overflow-scrolling:touch]">
+            <!-- REPEAT: one <article> per game.
+                 The 3 sample games are listed 3x to fill the ticker (as in the
+                 design). Your foreach replaces this whole block. -->
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <!-- desktop: matchup + time on top, hairline, odds on one line -->
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">SA</span>
+                  <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">5:30 PM PT</span>
+                  <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">NY</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">NY -1.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">215.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">SA +105</span>
+                </div>
+              </div>
+              <!-- mobile: matchup + time | divider | odds stacked -->
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">SA</span>
+                      <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">NY</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">5:30 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">NY -1.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">215.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">SA +105</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">LA</span>
+                  <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">7:00 PM PT</span>
+                  <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">CHI</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">CHI -3.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">220.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">LA +120</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">LA</span>
+                      <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">CHI</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">7:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">CHI -3.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">220.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">LA +120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">BOS</span>
+                  <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">8:00 PM PT</span>
+                  <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">MIA</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">BOS -2.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">210.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">MIA +110</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">BOS</span>
+                      <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">MIA</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">8:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">BOS -2.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">210.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">MIA +110</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">SA</span>
+                  <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">5:30 PM PT</span>
+                  <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">NY</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">NY -1.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">215.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">SA +105</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">SA</span>
+                      <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">NY</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">5:30 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">NY -1.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">215.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">SA +105</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">LA</span>
+                  <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">7:00 PM PT</span>
+                  <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">CHI</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">CHI -3.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">220.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">LA +120</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">LA</span>
+                      <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">CHI</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">7:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">CHI -3.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">220.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">LA +120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">BOS</span>
+                  <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">8:00 PM PT</span>
+                  <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">MIA</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">BOS -2.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">210.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">MIA +110</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">BOS</span>
+                      <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">MIA</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">8:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">BOS -2.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">210.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">MIA +110</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">SA</span>
+                  <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">5:30 PM PT</span>
+                  <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">NY</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">NY -1.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">215.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">SA +105</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">SA</span>
+                      <img src="assets/img/team-sa.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-ny.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">NY</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">5:30 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">NY -1.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">215.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">SA +105</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">LA</span>
+                  <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">7:00 PM PT</span>
+                  <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">CHI</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">CHI -3.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">220.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">LA +120</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">LA</span>
+                      <img src="assets/img/team-la.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-chi.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">CHI</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">7:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">CHI -3.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">220.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">LA +120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flex shrink-0 items-center rounded-xl border border-border-card bg-card-1 px-2 py-[5px] md:rounded-[10px] md:px-3 md:py-2">
+              <div class="hidden flex-col items-center gap-1.5 md:flex">
+                <div class="flex items-center justify-center gap-1">
+                  <span class="font-body text-sm font-bold text-fg-high">BOS</span>
+                  <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="whitespace-nowrap font-body text-xs font-bold text-fg-low">8:00 PM PT</span>
+                  <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                  <span class="font-body text-sm font-bold text-fg-high">MIA</span>
+                </div>
+                <div class="h-px w-full bg-border-card"></div>
+                <div class="flex items-center gap-1 whitespace-nowrap">
+                  <span class="font-body text-xs font-bold text-fg-low">Spread:</span>
+                  <span class="font-body text-sm text-fg-high">BOS -2.5</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">Total:</span>
+                  <span class="font-body text-sm text-fg-high">210.0</span>
+                  <span class="font-body text-sm text-fg-high">•</span>
+                  <span class="font-body text-xs font-bold text-fg-low">ML:</span>
+                  <span class="font-body text-sm text-fg-high">MIA +110</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 md:hidden">
+                <div class="flex flex-col items-center justify-center gap-1.5">
+                  <div class="flex items-center justify-center gap-0.5">
+                    <span class="flex items-center gap-1">
+                      <span class="font-body text-xs font-bold text-fg-high">BOS</span>
+                      <img src="assets/img/team-bos.png" alt="" class="size-4 shrink-0 object-contain" />
+                    </span>
+                    <span class="font-body text-xs text-fg-low">vs</span>
+                    <span class="flex items-center gap-1">
+                      <img src="assets/img/team-mia.png" alt="" class="size-4 shrink-0 object-contain" />
+                      <span class="font-body text-xs font-bold text-fg-high">MIA</span>
+                    </span>
+                  </div>
+                  <span class="whitespace-nowrap font-body text-[10px] text-fg-high">8:00 PM PT</span>
+                </div>
+                <div class="h-9 w-px shrink-0 bg-border-card"></div>
+                <div class="flex flex-col gap-1">
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Spread:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">BOS -2.5</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">Total:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">210.0</span>
+                  </div>
+                  <div class="flex items-center gap-0.5">
+                    <span class="w-10 shrink-0 font-body text-[10px] font-bold leading-4 text-fg-low">ML:</span>
+                    <span class="whitespace-nowrap font-body text-[10px] font-normal leading-4 text-fg-high">MIA +110</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- /REPEAT -->
+          </div>
+
+          <!-- scroll arrows sit over the row (desktop only; mobile is touch-scrolled) -->
+          <div class="pointer-events-none absolute inset-y-0 left-0 hidden w-[34px] items-center justify-start bg-gradient-to-r from-surface to-transparent md:flex">
+            <button type="button" aria-label="Scroll left" class="slider-prev pointer-events-auto hidden size-6 place-items-center rounded-full bg-fill-secondary text-fg-high transition hover:brightness-95 disabled:opacity-0 md:grid">
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+          </div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex w-[34px] items-center justify-end bg-gradient-to-l from-surface to-transparent">
+            <button type="button" aria-label="Scroll right" class="slider-next pointer-events-auto hidden size-6 place-items-center rounded-full bg-fill-secondary text-fg-high transition hover:brightness-95 disabled:opacity-0 md:grid">
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="shrink-0 whitespace-nowrap rounded-full border border-border-low bg-white px-3 py-1 font-body text-xs font-bold text-fg-high transition hover:bg-card-3 md:px-4 md:py-1.5 md:text-sm">
+          View Odds
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Hero — video + live chat
+         ===================================================================== -->
+    <section class="w-full pb-2 md:bg-surface lg:pb-8">
+      <div class="mx-auto flex w-full max-w-[1462px] flex-col gap-2 px-3 md:px-4">
+        <div class="flex flex-col items-start justify-center gap-3 lg:flex-row lg:gap-8">
+          <div class="flex w-full min-w-0 flex-1 flex-col">
+            <!-- mobile: video + show-info share one full-bleed surface block.
+                 desktop: transparent (the whole hero section is surface). -->
+            <div class="-mx-3 flex flex-col bg-surface md:mx-0 md:gap-6 md:bg-transparent">
+              <div class="relative overflow-hidden shadow-[inset_0_0_20px_0_rgba(0,0,0,0.2)] md:rounded-2xl">
+                <div style="padding: 56.25% 0 0 0; position: relative">
+                  <iframe
+                    src="https://player.vimeo.com/video/1207428466?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+                    title="The Europe Premier League Show"></iframe>
+                </div>
+              </div>
+
+              <div class="flex w-full items-center gap-4 px-3 py-2.5 md:gap-3 md:rounded-full md:bg-card-1 md:py-2 md:pl-1.5 md:pr-4">
+                <a href="#" class="flex min-w-0 flex-1 items-center gap-2.5">
+                  <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-14">
+                    <img src="assets/img/hero-logo.png" alt="" class="size-full object-cover" />
+                  </span>
+                  <span class="min-w-0 truncate font-heading text-sm font-extrabold text-fg-high md:text-xl">
+                    <span class="md:hidden">The EPL Show</span>
+                    <span class="hidden md:inline">The Europe Premier League Show</span>
+                  </span>
+                </a>
+                <div class="flex shrink-0 items-center gap-2">
+                  <button type="button" class="flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 font-heading text-xs font-extrabold text-white transition hover:bg-primary-text md:px-4 md:py-2 md:text-sm">
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
+                    Subscribe
+                  </button>
+                  <button type="button" aria-label="Share" class="grid size-8 shrink-0 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 md:size-9">
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- live chat -->
+          <aside class="chat flex w-full shrink-0 flex-col gap-3 rounded-xl border border-border-card bg-card-1 p-4 lg:w-[430px] lg:rounded-2xl">
+            <div class="flex w-full items-center justify-between">
+              <div class="flex items-center gap-3">
+                <h3 class="text-sm leading-tight text-fg-high">Live Chat</h3>
+                <span class="flex items-center gap-1.5">
+                  <span class="size-2 rounded-full bg-green-500"></span>
+                  <span class="font-heading text-sm font-normal text-fg-high">428 in chat</span>
+                </span>
+              </div>
+              <button type="button" aria-label="Toggle chat" aria-expanded="true" class="chat-toggle text-fg-medium">
+                <span class="chat-icon block transition-transform">
+                  <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6" /></svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="chat-body flex flex-col gap-3">
+              <div class="flex h-[130px] w-full flex-col justify-end gap-0.5 overflow-y-auto rounded-lg bg-card-3 px-2.5 py-1 no-scrollbar lg:h-[419px]">
+                <!-- REPEAT: one <div> per chat message -->
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@JenC</span>
+                    <span class="ml-2 font-body text-fg-high">Rogan looks great today</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@SamL</span>
+                    <span class="ml-2 font-body text-fg-high">the Georgia take is wild</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@JamK</span>
+                    <span class="ml-2 font-body text-fg-high">I can't believe how intense the debate got!</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@AlexT</span>
+                    <span class="ml-2 font-body text-fg-high">That twist at the end was unexpected!</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@ChrisM</span>
+                    <span class="ml-2 font-body text-fg-high">The play was top-notch this season.</span>
+                  </p>
+                </div>
+                <!-- /REPEAT -->
+              </div>
+
+              <!-- logged-out CTA on mobile, message input on desktop -->
+              <button type="button" class="w-full rounded-lg border border-border-low bg-white px-3 py-2.5 text-left font-body text-sm text-fg-low transition hover:border-primary lg:hidden">
+                Log In to Chat
+              </button>
+              <input type="text" placeholder="Say Something..." class="hidden w-full rounded-lg border border-border-low bg-white px-3 py-2.5 font-body text-sm text-fg-high placeholder:text-fg-low focus:border-primary focus:outline-none lg:block" />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Jump to Show
+         ===================================================================== -->
+    <div class="mx-auto w-full max-w-[1462px] px-3 pt-2 md:px-4 md:pt-6">
+      <div class="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-3">
+        <span class="shrink-0 font-heading text-sm font-extrabold leading-4 text-fg-high md:text-base md:leading-5">
+          Jump to Show<span class="hidden md:inline">:</span>
+        </span>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar">
+          <!-- REPEAT: one <button> per show -->
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            NBA
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            MLB
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            World Cup Show
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            The Champions League Show
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            EPL
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            NFL
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            NCAAB
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            The College Football Show
+            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+          </button>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         Top Promotions — slider
+         ===================================================================== -->
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex w-full items-center gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Top Promotions</h2>
+          </div>
+          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Your go-to features, all in one place</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="slider-track -mr-3 mt-4 flex gap-2.5 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <!-- REPEAT: one <article> per promotion.
+             The 8 sample promos are listed 2x to fill the row (as in the
+             design). Your foreach replaces this whole block. -->
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-1.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/spade-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Crypto Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-2.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-3.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-4.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/zap-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">50% Sports Re-up Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-5.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">100% Crypto Re-up Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-6.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-7.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-8.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-1.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/spade-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Crypto Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-2.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-3.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-4.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/zap-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">50% Sports Re-up Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-5.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">100% Crypto Re-up Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-6.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-7.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
+          <img src="assets/img/promo-8.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
+          <div class="relative flex w-full flex-col gap-[7px]">
+            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
+            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
+            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
+              Details
+              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+          </div>
+        </article>
+        <!-- /REPEAT -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Featured Products — slider on mobile, fills the bar on desktop
+         ===================================================================== -->
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex w-full items-center gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Featured Products</h2>
+          </div>
+          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Your go-to features, all in one place</p>
+        </div>
+        <div class="md:hidden">
+          <div class="flex items-center gap-2">
+            <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+            <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- The bordered bar is the scroll content: it bleeds off the right edge
+           while scrolling, and pr-3 pulls it back 12px at the last slide. -->
+      <div class="slider-track -mr-3 mt-4 overflow-x-auto scroll-smooth pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="relative flex w-max items-center rounded-xl border border-border-card bg-white p-1 md:w-full">
+          <div class="pointer-events-none absolute inset-1 z-0 overflow-hidden rounded-lg">
+            <img src="assets/img/feat-bg.png" alt="" class="absolute inset-0 size-full object-cover" />
+            <div class="absolute inset-0" style="background-image: url('assets/img/feat-pattern.png'); background-size: 1024px 1024px; background-position: top left; background-repeat: repeat"></div>
+          </div>
+
+          <!-- REPEAT: one cell per product, with a divider between cells -->
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-live-betting.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Live Betting</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-odds-boost.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Odds Boost</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-props-builder.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Props Builder</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-same-game-parlay.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Same Game Parlay</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-live-streaming.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Live Streaming</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-contests.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Contests</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-promos.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Promos</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-casino.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Casino</p>
+          </div>
+          <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
+          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <img src="assets/img/feat-sports.png" alt="" class="size-9 object-contain md:size-[45px]" />
+            <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Sports</p>
+          </div>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Shorts — slider
+         ===================================================================== -->
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex w-full items-center gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Shorts</h2>
+            <span class="rounded-md bg-fg-high px-2 py-0.5 font-heading text-[10px] font-extrabold text-white">NEW</span>
+          </div>
+          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Bite-sized hot takes &amp; viral moments</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="slider-track -mr-3 mt-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <!-- REPEAT: one <article> per short (the NEW badge only shows on new ones).
+             The 6 sample shorts are listed 2x to fill the row (as in the
+             design). Your foreach replaces this whole block. -->
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-1.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">PSG TOO MUCH FOR ARSENAL 👀⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-2.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">DON'T SLEEP ON GHANA 👀🇬🇭</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-3.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">MEXICO OWNS THIS GROUP 🇲🇽🔥</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-4.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">CALAFIORI CARD IS A BANKER 🟨⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-5.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">CITY SHOULD ROLL 🔥⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-6.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">NO CLEAN SHEETS HERE 🚫⚽</p>
+          </div>
+        </article>
+
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-1.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">PSG TOO MUCH FOR ARSENAL 👀⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-2.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">DON'T SLEEP ON GHANA 👀🇬🇭</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-3.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <span class="absolute left-3 top-3 rounded-md bg-[#ebf0fa] px-2 py-0.5 font-heading text-[10px] font-extrabold text-fg-high">NEW</span>
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">MEXICO OWNS THIS GROUP 🇲🇽🔥</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-4.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">CALAFIORI CARD IS A BANKER 🟨⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-5.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">CITY SHOULD ROLL 🔥⚽</p>
+          </div>
+        </article>
+        <article class="relative flex h-[260px] w-[175px] shrink-0 items-end overflow-hidden rounded-2xl shadow-[inset_0_0_10px_0_rgba(1,1,89,0.1)] md:h-[300px] md:w-[202px]">
+          <img src="assets/img/shorts-6.png" alt="" class="absolute inset-0 size-full object-cover" />
+          <div class="relative flex w-full items-center bg-gradient-to-b from-transparent to-[#0f223d]/90 px-3 pb-4 pt-3">
+            <p class="font-heading text-sm font-extrabold leading-[1.15] text-white [text-shadow:0_0_4px_rgba(0,0,0,0.5)]">NO CLEAN SHEETS HERE 🚫⚽</p>
+          </div>
+        </article>
+        <!-- /REPEAT -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Coming up next — mobile only
+         ===================================================================== -->
+    <section class="px-3 pt-10 md:hidden">
+      <div class="relative flex h-[451px] flex-col overflow-hidden rounded-2xl px-6 pb-[15px] pt-6">
+        <img src="assets/img/upnext-bg.png" alt="" class="pointer-events-none absolute inset-0 size-full object-cover" />
+        <div class="relative flex w-full flex-col gap-4">
+          <p class="font-body text-xs text-[#d3dae6]">Don't miss this week</p>
+          <div class="flex flex-col items-center">
+            <p class="w-full font-display text-[35px] font-bold uppercase leading-[1.2] text-white">THE EPL</p>
+            <div class="w-full -rotate-[1.18deg]">
+              <div class="flex h-[57px] w-full items-center justify-center overflow-hidden bg-[#80e2ff] px-3.5">
+                <p class="whitespace-nowrap font-display text-[35px] font-bold uppercase leading-[1.2] text-[#010159]">PREDICTIONS</p>
+              </div>
+            </div>
+            <p class="w-full font-display text-[35px] font-bold uppercase leading-[1.2] text-white">SHOW</p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="flex items-center gap-0.5">
+              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">4d</div>
+              <span class="font-heading text-sm text-white">:</span>
+              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">23h</div>
+              <span class="font-heading text-sm text-white">:</span>
+              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">40m</div>
+            </div>
+            <button type="button" class="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-heading text-sm font-extrabold text-fg-high transition hover:bg-white/90">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
+              Remind Me
+            </button>
+          </div>
+          <p class="font-body text-xs text-[#d3dae6]">Friday 8:00 PM ET · live from the desk</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         All Shows — one scrolling row per show (touch/trackpad scroll, no arrows)
+         ===================================================================== -->
+    <section class="mx-auto flex w-full max-w-[1462px] flex-col gap-5 px-3 pt-6 md:gap-7 md:px-4 md:pt-8">
+      <div class="flex w-full items-center gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">All Shows</h2>
+          </div>
+          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Find your favorite shows and new episodes.</p>
+        </div>
+      </div>
+
+      <!-- REPEAT: one block per show -->
+      <div class="flex w-full flex-col gap-3">
+        <div class="flex w-full items-center gap-3">
+          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
+            <img src="assets/img/avatar-nba.png" alt="" class="size-full object-cover" />
+          </span>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NBA Show</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+        </div>
+        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+          <!-- REPEAT: one <article> per episode -->
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:25</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:37</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:48</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:02</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:15</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:29</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <!-- /REPEAT episodes -->
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col gap-3">
+        <div class="flex w-full items-center gap-3">
+          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
+            <img src="assets/img/avatar-nfl.png" alt="" class="size-full object-cover" />
+          </span>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NFL Show</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+        </div>
+        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:41</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:52</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:05</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:18</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:30</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:46</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col gap-3">
+        <div class="flex w-full items-center gap-3">
+          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
+            <img src="assets/img/avatar-champions.png" alt="" class="size-full object-cover" />
+          </span>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The Champions League Show</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+        </div>
+        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:03</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:17</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:29</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:45</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:00</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:11</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col gap-3">
+        <div class="flex w-full items-center gap-3">
+          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
+            <img src="assets/img/avatar-premier.png" alt="" class="size-full object-cover" />
+          </span>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The Premier League Show</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+        </div>
+        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:26</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:39</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:52</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:07</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:20</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:32</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-col gap-3">
+        <div class="flex w-full items-center gap-3">
+          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
+            <img src="assets/img/avatar-ncaab.png" alt="" class="size-full object-cover" />
+          </span>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NCAAB Show</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+        </div>
+        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:46</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:00</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:14</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:27</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:39</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            </div>
+          </article>
+          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:50</span>
+            </div>
+            <div class="flex w-full flex-col gap-2 px-2.5">
+              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
+              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- /REPEAT shows -->
+    </section>
+
+    <!-- =====================================================================
+         Join Our Community
+         ===================================================================== -->
+    <section class="mx-auto w-full max-w-[1462px] px-3 py-10 md:px-4">
+      <div class="mx-auto flex w-full flex-col gap-4">
+        <div class="flex w-full items-center gap-2">
+          <div class="flex min-w-0 flex-1 flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Join Our Community</h2>
+            </div>
+            <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Follow @BetUS for picks, drops &amp; behind-the-scenes</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- REPEAT: one <a> per network -->
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-telegram.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">Telegram</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-x.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">X</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-youtube.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">YouTube</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-tiktok.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">TikTok</span>
+          </a>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </section>
+
+    <!-- spacer so the fixed mobile bars don't cover the last section -->
+    <div class="h-14 md:hidden"></div>
+
+    <!-- =====================================================================
+         Fixed mobile footer bars — each closes on its own
+         ===================================================================== -->
+    <div class="fixed inset-x-0 bottom-0 z-40 flex flex-col gap-1 md:hidden">
+      <div class="closable mx-3 flex items-center gap-2 rounded-xl bg-[#00264f] py-2 pl-3 pr-2">
+        <span class="shrink-0 text-[#a4d8ff]">
+          <svg class="size-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.58346 17.4998C8.72294 17.7535 8.928 17.9651 9.1772 18.1125C9.4264 18.2599 9.7106 18.3376 10.0001 18.3376C10.2896 18.3376 10.5738 18.2599 10.823 18.1125C11.0722 17.9651 11.2773 17.7535 11.4168 17.4998M3.33341 1.6665C2.33341 3.08317 1.66675 4.74984 1.66675 6.6665M18.3334 6.6665C18.3334 4.74984 17.6667 3.08317 16.6667 1.6665M5.00008 6.6665C5.00008 5.34042 5.52687 4.06865 6.46455 3.13097C7.40223 2.19329 8.674 1.6665 10.0001 1.6665C11.3262 1.6665 12.5979 2.19329 13.5356 3.13097C14.4733 4.06865 15.0001 5.34042 15.0001 6.6665C15.0001 12.4998 17.5001 14.1665 17.5001 14.1665H2.50008C2.50008 14.1665 5.00008 12.4998 5.00008 6.6665Z" /></svg>
+        </span>
+        <div class="flex min-w-0 flex-1 flex-col gap-0.5">
+          <p class="truncate font-heading text-xs font-bold leading-4">
+            <span class="text-[#a4d8ff]">+24</span><span class="text-white"> just subscribed</span>
+          </p>
+          <p class="truncate font-body text-xs font-normal leading-4 text-white">Tap subscribe to get the next drop</p>
+        </div>
+        <button type="button" class="inline-flex h-6 min-w-16 shrink-0 items-center justify-center rounded-lg bg-primary px-2.5 font-heading text-xs font-extrabold leading-4 tracking-tight text-white transition hover:bg-primary-text">Subscribe</button>
+        <button type="button" aria-label="Close" class="close-button grid size-8 shrink-0 place-items-center text-[#9eaabe] transition hover:text-white">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+
+      <div class="closable flex items-center gap-2 bg-surface py-2 pl-3 pr-2 shadow-[0_-1px_10px_0_rgba(40,46,56,0.08)]">
+        <div class="flex min-w-0 flex-1 flex-col items-center justify-center gap-1 text-center">
+          <p class="font-heading text-sm font-extrabold leading-4 text-fg-high">Get <span class="text-primary-text">200%</span> Welcome Bonus</p>
+          <p class="flex items-center justify-center gap-0.5 font-body text-[10px] leading-4 text-fg-low">
+            <span class="font-extrabold">21+</span><span>·</span><span>Gamble responsibly</span><span>·</span><span>1-800-GAMBLER</span>
+          </p>
+        </div>
+        <button type="button" class="inline-flex h-8 min-w-20 shrink-0 items-center justify-center rounded-lg bg-[#ffc107] px-3 font-heading text-sm font-extrabold uppercase leading-4 text-[#010b1e] transition hover:brightness-95">Get Started</button>
+        <button type="button" aria-label="Close" class="close-button grid size-8 shrink-0 place-items-center text-fg-medium transition hover:text-fg-high">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="js/slider.js" defer></script>
+    <script src="js/ui.js" defer></script>
   </body>
 </html>

@@ -1,156 +1,175 @@
-# BetusTV — Frontend
+# BetUS TV — Frontend
 
-Frontend for BetusTV, built with **Vite** + **Tailwind CSS v4** (vanilla JS/HTML).
-No framework lock-in — the markup is plain HTML with Tailwind utility classes, so
-it drops cleanly into **Blade / Laravel / WordPress** templates on the backend side.
+Plain HTML + Tailwind CSS. Four static pages, two small JavaScript files, no
+framework and no build tooling beyond the Tailwind compiler.
 
-## Requirements
+The markup lives **in the HTML files** — nothing is rendered by JavaScript — so
+each page can be pasted straight into a PHP/Blade view and driven with backend
+data.
 
-- Node.js 18+ (built on Node 24), Yarn
+## Open it
 
-## Getting started
+Just open `index.html` in a browser. `css/style.css` is committed, so nothing
+needs to be installed or run to view the pages.
 
-```bash
-yarn install
-yarn dev      # start dev server at http://localhost:5173 (HMR)
-yarn build    # production build -> dist/ (one HTML file per page)
-yarn preview  # preview the production build locally
-```
-
-Pages in dev: `/` (home), `/show.html`, `/video.html`, `/video-2.html`.
-
-## Project structure
+## Structure
 
 ```
 betustv-new-design/
-├─ index.html          # home entry
-├─ show.html           # show-page entry
-├─ video.html          # video-page entry (light hero)
-├─ video-2.html        # video-page entry (home-style hero)
-├─ vite.config.js      # Vite + Tailwind plugin; multi-page build inputs
-├─ src/
-│  ├─ main.js          # home entry — renders renderHome() into #app
-│  ├─ show.js          # show entry — renderShow(); also EXPORTS section builders
-│  ├─ video.js         # video entry — renderVideo() (reuses show.js sections)
-│  ├─ video-2.js       # video-2 entry — renderVideo2()
-│  ├─ sections.js      # home sections + shared helpers (CONTAINER, showCard,
-│  │                   #   sectionHeader, carouselNav, community, hero, initHome)
-│  ├─ data.js          # home-page sample content (swap for backend data)
-│  ├─ icons.js         # inline SVG icons
-│  ├─ style.css        # Tailwind entry, @font-face, @theme design tokens
-│  ├─ lib/assets.js    # maps src/assets/figma/* to hashed URLs by basename
-│  └─ assets/
-│     ├─ *.woff2/.otf  # Nexa (headings) + Roboto (body) + Gustavo (display)
-│     └─ figma/        # images/icons exported from the Figma design
-└─ dist/               # build output (generated; git-ignored)
+├─ index.html          # home
+├─ show.html           # show page ("The EPL Show")
+├─ video.html          # video page (light hero)
+├─ video-2.html        # video page (home-style hero + Related News slider)
+├─ favicon.svg
+├─ css/
+│  └─ style.css        # compiled Tailwind — committed, linked by every page
+├─ js/
+│  ├─ slider.js        # prev/next buttons on the card rows
+│  └─ ui.js            # chat collapse, accordions, close buttons
+├─ assets/
+│  ├─ img/             # all images, referenced by plain relative path
+│  └─ fonts/           # Nexa, Roboto, Gustavo
+└─ src/
+   └─ input.css        # Tailwind source: @theme tokens + @font-face
 ```
 
-## Pages
+> The **header and footer are intentionally omitted** — they're global and owned
+> by the backend. Each page contains only its own body.
 
-| Page      | HTML entry      | JS entry        | Render fn        | Sample data source                     |
-| --------- | --------------- | --------------- | ---------------- | -------------------------------------- |
-| Home      | `index.html`    | `src/main.js`   | `renderHome()`   | `src/data.js`                          |
-| Show      | `show.html`     | `src/show.js`   | `renderShow()`   | inline consts in `src/show.js`         |
-| Video     | `video.html`    | `src/video.js`  | `renderVideo()`  | inline consts in `src/video.js`        |
-| Video 2   | `video-2.html`  | `src/video-2.js`| `renderVideo2()` | inline consts in `src/video-2.js`      |
+## Changing styles
 
-Each entry does the same two things: write the page markup into `#app`, then call
-`initHome()` to wire interactivity. `video.js` / `video-2.js` **reuse** the show
-page's lower sections (imported from `show.js`), so those sections live in one
-place.
+Only needed if you add/change Tailwind classes or design tokens.
 
-> The shared **header and footer are intentionally omitted** — they're global and
-> owned by the backend layer. Each page renders only its own body.
+```bash
+npm install
+npm run css     # build css/style.css once
+npm run watch   # rebuild on save
+```
 
-## Design tokens
+Design tokens (brand colours, fonts, radii) are Tailwind v4 `@theme` variables in
+`src/input.css`. Each one becomes a utility automatically:
 
-Brand colors, fonts, radii, etc. are Tailwind v4 `@theme` variables in
-`src/style.css` and auto-generate utilities. The main ones:
-
-| Token (in `style.css`)              | Utility examples                         |
-| ----------------------------------- | ---------------------------------------- |
-| `--color-fg-high` `#282e38`         | `text-fg-high`                           |
-| `--color-fg-medium` `#576276`       | `text-fg-medium`                         |
-| `--color-fg-low` `#7f8ba3`          | `text-fg-low`                            |
-| `--color-primary` `#007bff`         | `bg-primary`, `text-primary`             |
-| `--color-primary-text` `#0072eb`    | `text-primary-text`                      |
-| `--color-link` `#a4d8ff`            | `text-link`                              |
-| `--color-card-1/2/3`, `--color-surface` | `bg-card-2`, `bg-surface`            |
-| `--color-border-low/medium`         | `border-border-low`                      |
-| `--font-heading` (Nexa)             | `font-heading`                           |
-| `--font-body` (Roboto)              | `font-body`                              |
-| `--font-display` (Gustavo)          | `font-display`                           |
+| Token (in `src/input.css`)              | Utility examples             |
+| --------------------------------------- | ---------------------------- |
+| `--color-fg-high` `#282e38`             | `text-fg-high`               |
+| `--color-fg-medium` `#576276`           | `text-fg-medium`             |
+| `--color-fg-low` `#7f8ba3`              | `text-fg-low`                |
+| `--color-primary` `#007bff`             | `bg-primary`, `text-primary` |
+| `--color-primary-text` `#0072eb`        | `text-primary-text`          |
+| `--color-link` `#a4d8ff`                | `text-link`                  |
+| `--color-card-1/2/3`, `--color-surface` | `bg-card-2`, `bg-surface`    |
+| `--color-border-low/medium`             | `border-border-low`          |
+| `--font-heading` (Nexa)                 | `font-heading`               |
+| `--font-body` (Roboto)                  | `font-body`                  |
+| `--font-display` (Gustavo)              | `font-display`               |
 
 Dark surfaces (show-page hero, About card, alert bar) use literal hex values
 inline (e.g. `#000c19`, `#111a2a`) since they're the inverse-theme equivalents.
 
----
+### Button cursors
 
-## Backend integration notes
+Tailwind v4 dropped v3's `button { cursor: pointer }`, so without help every
+button shows the plain arrow. `src/input.css` puts it back in one rule:
 
-The output is plain, portable HTML + Tailwind classes. Two ways to consume it:
+```css
+button:not(:disabled) {
+  cursor: pointer;
+}
+```
 
-1. **Ship the build** — run `yarn build` and serve the generated `dist/` (each page
-   is a self-contained HTML file with hashed CSS/JS/asset URLs).
-2. **Port the markup** — copy the rendered HTML into Blade / PHP / WordPress
-   templates and drive it with backend data (see below). Re-create the Tailwind
-   build in the backend project (Laravel Vite plugin, or the Tailwind CLI for a
-   WordPress theme) pointing at the same `@theme` in `src/style.css`.
+That covers every button on every page — no `cursor-pointer` class needed on
+individual buttons. Disabled buttons are excluded, so a greyed-out slider arrow
+doesn't look clickable. **Carry this rule over to the PHP project** or the
+buttons there will show the wrong cursor.
 
-### Where the content comes from (swap this for real data)
+## Sliders
 
-All copy, images, and lists are **sample data** kept separate from the markup:
+A slider is three classes. No config, no options, no library:
 
-- **Home** — every section reads from the exports in **`src/data.js`**
-  (`oddsTicker`, `hero`, `chatMessages`, `jumpToShow`, `promotions`,
-  `featuredProducts`, `shorts`, `upNext`, `community`, `shows`). Each export is
-  shaped like a backend payload, so you replace the values (or feed the same
-  shapes into your template loops) without touching the markup.
-- **Show / Video / Video 2** — sample data lives in `const` arrays/objects at the
-  top of `src/show.js`, `src/video.js`, `src/video-2.js` (e.g. `showMeta`,
-  `fullShowVideos`, `relatedNews`, `picks`, `shorts`, `hosts`, `channels`,
-  `video`). Same idea: swap the values for API/DB data.
+```html
+<div class="slider">
+  <button class="slider-prev">‹</button>
+  <button class="slider-next">›</button>
 
-When templating (Blade `@foreach`, WP `while have_posts()`, etc.), map one data
-item to one card/row and keep the element's classes intact.
+  <div class="slider-track flex gap-2 overflow-x-auto">
+    <article>card</article>
+    <article>card</article>
+  </div>
+</div>
+```
 
-### Images and fonts
+- `.slider` — the wrapper. The buttons can be anywhere inside it.
+- `.slider-track` — the scrolling row. It's `overflow-x-auto`, so **touch swipe
+  works with no JavaScript at all**.
+- `.slider-prev` / `.slider-next` — one click scrolls 80% of the visible width.
 
-- Images are referenced by **basename** through `asset(name)` in
-  `src/lib/assets.js`, which resolves `src/assets/figma/<name>.<ext>` to a hashed
-  URL at build time. In a backend template, replace `asset('news-1')` with your
-  own asset/CDN URL for that slot.
-- Fonts: **Nexa** (`font-heading`), **Roboto** (`font-body`), **Gustavo**
-  (`font-display`). ⚠️ **Gustavo is the TRIAL version** — replace the
-  `src/assets/Gustavo-*.otf` files with the licensed files before production.
+The arrows show the hand cursor, and revert to the normal arrow once that end is
+reached — see the note on button cursors below.
+
+`js/slider.js` only does two things: scroll the track on click, and set
+`disabled` on a button when there's nothing more to scroll that way (which is
+what greys it out, via `disabled:opacity-40`).
+
+**Card count comes from your data.** A row scrolls when its cards are wider than
+the space available — nothing to configure. If a row is short enough to fit, the
+arrows grey out on their own, which is correct behaviour, not a bug.
+
+Some sample rows (the odds ticker, Top Promotions, Shorts) list the same few
+records more than once so the row overflows and the arrows are live on a wide
+desktop — the original design did the same. Your `foreach` replaces the whole
+block, so the duplication disappears with real data.
+
+Featured Products is deliberately different: on desktop the cells are `flex-1`
+and fill the bar, so it doesn't scroll there and its arrows are `md:hidden`. It
+only scrolls on mobile.
+
+## Other interactive bits (`js/ui.js`)
+
+Same idea — a class on the markup, a click handler in the file:
+
+| Feature          | Classes                                                                 |
+| ---------------- | ----------------------------------------------------------------------- |
+| Live chat        | `.chat`, `.chat-toggle`, `.chat-body`, `.chat-icon`                     |
+| Accordions       | `.accordion`, `.accordion-toggle`, `.accordion-body`, `.accordion-icon` |
+| Dismissible bars | `.closable` + `.close-button`                                           |
+
+## Using this in the PHP project
+
+1. **Copy the markup.** Open the page, copy the section you need into your view.
+   Keep the classes intact.
+2. **Loop the repeats.** Every list is written once per item and wrapped in a
+   `<!-- REPEAT -->` … `<!-- /REPEAT -->` comment. That's where your `@foreach`
+   goes — one item maps to one card.
+3. **Fix the asset paths.** Images are `assets/img/<name>.<ext>`. Swap for your
+   own asset/CDN helper.
+4. **Bring the CSS.** Either copy `css/style.css` as-is, or point your project's
+   Tailwind build at the same `@theme` block in `src/input.css` so the tokens
+   match.
+5. **Copy `js/slider.js` and `js/ui.js`** and include them with `defer`. They're
+   plain scripts — no modules, no imports, no bundler.
+
+### Sample content
+
+All copy, images and lists in these pages are **sample data** — replace them with
+real values. Where a card repeats, only the unique items are written out (the
+original design padded rows by duplicating the same few records).
 
 ### Media
 
-- The video players are **Vimeo iframes** (`player.vimeo.com/video/<id>`). The id
-  comes from the data (`data.hero.vimeoId`, `video.vimeoId`). Swap for the real
-  stream/embed URL.
+The players are **Vimeo iframes** (`player.vimeo.com/video/1207428466`). Swap for
+the real stream/embed URL.
 
-### Interactivity — preserve these `data-*` hooks
+### Fonts
 
-`initHome()` (in `src/sections.js`) wires all interactive behaviour by
-**data-attribute**, so it works on every page and survives templating **as long as
-the attributes are kept**. If the markup is ported to Blade/PHP, either keep these
-hooks and reuse `initHome()`, or re-implement the behaviour:
-
-| Feature                     | Attributes                                                                 |
-| --------------------------- | -------------------------------------------------------------------------- |
-| Odds ticker                 | `data-odds-root`, `data-odds-scroll`, `data-odds="prev\|next"`             |
-| Generic carousels/sliders   | `data-carousel-root`, `data-carousel-scroll`, `data-carousel="prev\|next"` |
-| Live chat collapse (hero)   | `data-chat`, `data-chat-toggle`, `data-chat-body`, `data-chat-icon`        |
-| Accordions (Host & Guests)  | `data-accordion`, `data-accordion-toggle`, `data-accordion-body`, `data-accordion-icon` |
-| Fixed mobile footer bars    | `data-welcome-root`, `data-bonus-item` / `data-welcome-close`, `data-alert-item` / `data-alert-close` |
+Nexa (`font-heading`), Roboto (`font-body`), Gustavo (`font-display`).
+⚠️ **Gustavo is the TRIAL version** — replace `assets/fonts/Gustavo-*.otf` with
+the licensed files before production.
 
 ### Responsive conventions
 
-- Breakpoints: **`md` (768px)** is the main mobile↔desktop switch; **`lg` (1024px)**
-  is used where the hero/related-news go side-by-side.
-- Page gutter: `CONTAINER` (in `sections.js`) = `mx-auto w-full max-w-[1462px]
-  px-3 md:px-4` (12px mobile / 16px desktop). Lower show/video sections cap
-  narrower (`max-w-[1128px]`–`max-w-[1140px]`).
+- Breakpoints: **`md` (768px)** is the main mobile↔desktop switch; **`lg`
+  (1024px)** is where the hero/related-news go side-by-side.
+- Page gutter: `mx-auto w-full max-w-[1462px] px-3 md:px-4` (12px mobile / 16px
+  desktop). Lower show/video sections cap narrower (`max-w-[1140px]`).
 - Some 2-line clamped titles use `text-box-trim` (Chromium 133+/Safari 18.2+);
   older browsers fall back to a slightly clipped second line.

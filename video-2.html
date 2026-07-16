@@ -2,12 +2,308 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>BetUS TV — Video 2</title>
   </head>
   <body>
-    <div id="app" data-page="video-2"></div>
-    <script type="module" src="/src/video-2.js"></script>
+    <!-- =====================================================================
+         Video page 2 — same hero as the home page, then a Related News
+         slider and Recent Videos. Header and footer are global
+         (backend-owned) — this file is the page body only.
+         ===================================================================== -->
+
+    <!-- =====================================================================
+         Hero — video + live chat (same as the home page)
+         ===================================================================== -->
+    <section class="w-full pb-2 md:bg-surface lg:pb-8">
+      <div class="mx-auto flex w-full max-w-[1462px] flex-col gap-2 px-3 md:px-4">
+        <div class="flex flex-col items-start justify-center gap-3 lg:flex-row lg:gap-8">
+          <div class="flex w-full min-w-0 flex-1 flex-col">
+            <div class="-mx-3 flex flex-col bg-surface md:mx-0 md:gap-6 md:bg-transparent">
+              <div class="relative overflow-hidden shadow-[inset_0_0_20px_0_rgba(0,0,0,0.2)] md:rounded-2xl">
+                <div style="padding: 56.25% 0 0 0; position: relative">
+                  <iframe
+                    src="https://player.vimeo.com/video/1207428466?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+                    title="The Europe Premier League Show"></iframe>
+                </div>
+              </div>
+
+              <div class="flex w-full items-center gap-4 px-3 py-2.5 md:gap-3 md:rounded-full md:bg-card-1 md:py-2 md:pl-1.5 md:pr-4">
+                <a href="#" class="flex min-w-0 flex-1 items-center gap-2.5">
+                  <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-14">
+                    <img src="assets/img/hero-logo.png" alt="" class="size-full object-cover" />
+                  </span>
+                  <span class="min-w-0 truncate font-heading text-sm font-extrabold text-fg-high md:text-xl">
+                    <span class="md:hidden">The EPL Show</span>
+                    <span class="hidden md:inline">The Europe Premier League Show</span>
+                  </span>
+                </a>
+                <div class="flex shrink-0 items-center gap-2">
+                  <button type="button" class="flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 font-heading text-xs font-extrabold text-white transition hover:bg-primary-text md:px-4 md:py-2 md:text-sm">
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
+                    Subscribe
+                  </button>
+                  <button type="button" aria-label="Share" class="grid size-8 shrink-0 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 md:size-9">
+                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- live chat -->
+          <aside class="chat flex w-full shrink-0 flex-col gap-3 rounded-xl border border-border-card bg-card-1 p-4 lg:w-[430px] lg:rounded-2xl">
+            <div class="flex w-full items-center justify-between">
+              <div class="flex items-center gap-3">
+                <h3 class="text-sm leading-tight text-fg-high">Live Chat</h3>
+                <span class="flex items-center gap-1.5">
+                  <span class="size-2 rounded-full bg-green-500"></span>
+                  <span class="font-heading text-sm font-normal text-fg-high">428 in chat</span>
+                </span>
+              </div>
+              <button type="button" aria-label="Toggle chat" aria-expanded="true" class="chat-toggle text-fg-medium">
+                <span class="chat-icon block transition-transform">
+                  <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6" /></svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="chat-body flex flex-col gap-3">
+              <div class="flex h-[130px] w-full flex-col justify-end gap-0.5 overflow-y-auto rounded-lg bg-card-3 px-2.5 py-1 no-scrollbar lg:h-[419px]">
+                <!-- REPEAT: one <div> per chat message -->
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@JenC</span>
+                    <span class="ml-2 font-body text-fg-high">Rogan looks great today</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@SamL</span>
+                    <span class="ml-2 font-body text-fg-high">the Georgia take is wild</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@JamK</span>
+                    <span class="ml-2 font-body text-fg-high">I can't believe how intense the debate got!</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@AlexT</span>
+                    <span class="ml-2 font-body text-fg-high">That twist at the end was unexpected!</span>
+                  </p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <p class="text-sm leading-normal">
+                    <span class="font-body font-bold text-primary-text">@ChrisM</span>
+                    <span class="ml-2 font-body text-fg-high">The play was top-notch this season.</span>
+                  </p>
+                </div>
+                <!-- /REPEAT -->
+              </div>
+
+              <button type="button" class="w-full rounded-lg border border-border-low bg-white px-3 py-2.5 text-left font-body text-sm text-fg-low transition hover:border-primary lg:hidden">
+                Log In to Chat
+              </button>
+              <input type="text" placeholder="Say Something..." class="hidden w-full rounded-lg border border-border-low bg-white px-3 py-2.5 font-body text-sm text-fg-high placeholder:text-fg-low focus:border-primary focus:outline-none lg:block" />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Related News — horizontal slider on desktop, vertical stack on mobile
+         (so the track only scrolls from md up)
+         ===================================================================== -->
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex items-center gap-2">
+        <h2 class="line-clamp-1 min-w-0 flex-1 font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Related News</h2>
+        <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:hidden">Go to News</a>
+        <div class="hidden shrink-0 md:block">
+          <div class="flex items-center gap-2">
+            <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+            <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-track mt-4 flex flex-col gap-2 md:-mr-3 md:flex-row md:overflow-x-auto md:scroll-smooth md:pb-1 md:pr-3 md:no-scrollbar md:[-webkit-overflow-scrolling:touch]">
+        <!-- REPEAT: one <a> per article -->
+        <a href="#" class="flex h-[125px] w-full shrink-0 items-center gap-4 rounded-xl bg-card-2 py-0.5 pl-0.5 pr-4 transition hover:bg-card-3 md:w-[430px]">
+          <img src="assets/img/news-1.png" alt="" class="h-full w-[130px] shrink-0 rounded-[10px] object-cover md:w-[150px]" />
+          <div class="flex min-w-0 flex-1 flex-col gap-2 pb-2">
+            <p class="truncate font-body text-sm leading-5 text-fg-medium">May 22 · 7 min read</p>
+            <p class="line-clamp-2 h-[34px] font-heading text-base font-extrabold leading-[1.25] text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Final Day: Europe and Relegation on the Line</p>
+          </div>
+        </a>
+        <a href="#" class="flex h-[125px] w-full shrink-0 items-center gap-4 rounded-xl bg-card-2 py-0.5 pl-0.5 pr-4 transition hover:bg-card-3 md:w-[430px]">
+          <img src="assets/img/news-2.png" alt="" class="h-full w-[130px] shrink-0 rounded-[10px] object-cover md:w-[150px]" />
+          <div class="flex min-w-0 flex-1 flex-col gap-2 pb-2">
+            <p class="truncate font-body text-sm leading-5 text-fg-medium">Sep 03 · 6 min read</p>
+            <p class="line-clamp-2 h-[34px] font-heading text-base font-extrabold leading-[1.25] text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Odds: Man City &amp; Liverpool Lead the Way</p>
+          </div>
+        </a>
+        <a href="#" class="flex h-[125px] w-full shrink-0 items-center gap-4 rounded-xl bg-card-2 py-0.5 pl-0.5 pr-4 transition hover:bg-card-3 md:w-[430px]">
+          <img src="assets/img/news-3.png" alt="" class="h-full w-[130px] shrink-0 rounded-[10px] object-cover md:w-[150px]" />
+          <div class="flex min-w-0 flex-1 flex-col gap-2 pb-2">
+            <p class="truncate font-body text-sm leading-5 text-fg-medium">Aug 06 · 6 min read</p>
+            <p class="line-clamp-2 h-[34px] font-heading text-base font-extrabold leading-[1.25] text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League 2024-25 Season Preview and Betting Picks</p>
+          </div>
+        </a>
+        <a href="#" class="flex h-[125px] w-full shrink-0 items-center gap-4 rounded-xl bg-card-2 py-0.5 pl-0.5 pr-4 transition hover:bg-card-3 md:w-[430px]">
+          <img src="assets/img/news-4.png" alt="" class="h-full w-[130px] shrink-0 rounded-[10px] object-cover md:w-[150px]" />
+          <div class="flex min-w-0 flex-1 flex-col gap-2 pb-2">
+            <p class="truncate font-body text-sm leading-5 text-fg-medium">Jul 15 · 7 min read</p>
+            <p class="line-clamp-2 h-[34px] font-heading text-base font-extrabold leading-[1.25] text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">4 Storylines to Follow if You're Betting on the Premier League in 2024-25</p>
+          </div>
+        </a>
+        <a href="#" class="flex h-[125px] w-full shrink-0 items-center gap-4 rounded-xl bg-card-2 py-0.5 pl-0.5 pr-4 transition hover:bg-card-3 md:w-[430px]">
+          <img src="assets/img/news-5.png" alt="" class="h-full w-[130px] shrink-0 rounded-[10px] object-cover md:w-[150px]" />
+          <div class="flex min-w-0 flex-1 flex-col gap-2 pb-2">
+            <p class="truncate font-body text-sm leading-5 text-fg-medium">May 20 · 15 min read</p>
+            <p class="line-clamp-2 h-[34px] font-heading text-base font-extrabold leading-[1.25] text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">The Clubs with the Most FIFA World Cup Winning Players</p>
+          </div>
+        </a>
+        <!-- /REPEAT -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Recent Videos — slider
+         ===================================================================== -->
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex w-full items-center gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Recent Videos</h2>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="slider-track -mr-3 mt-4 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <!-- REPEAT: one <article> per episode -->
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:26</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+          </div>
+        </article>
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:39</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 37 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+          </div>
+        </article>
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:52</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 36 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+          </div>
+        </article>
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:07</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 35 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+          </div>
+        </article>
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:20</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 34 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+          </div>
+        </article>
+        <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
+            <img src="assets/img/show-premier-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
+            <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:32</span>
+          </div>
+          <div class="flex w-full flex-col gap-2 px-2.5">
+            <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 33 | Soccer Predictions &amp; Betting Analysis</h4>
+            <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+          </div>
+        </article>
+        <!-- /REPEAT -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Join Our Community
+         ===================================================================== -->
+    <section class="mx-auto w-full max-w-[1462px] px-3 py-10 md:px-4">
+      <div class="mx-auto flex w-full max-w-[1430px] flex-col gap-4">
+        <div class="flex w-full items-center gap-2">
+          <div class="flex min-w-0 flex-1 flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Join Our Community</h2>
+            </div>
+            <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Follow @BetUS for picks, drops &amp; behind-the-scenes</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- REPEAT: one <a> per network -->
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-telegram.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">Telegram</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-x.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">X</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-youtube.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">YouTube</span>
+          </a>
+          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
+            <img src="assets/img/social-tiktok.svg" alt="" class="size-7" />
+            <span class="text-center font-heading text-xs font-extrabold text-fg-high">TikTok</span>
+          </a>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </section>
+
+    <script src="js/slider.js" defer></script>
+    <script src="js/ui.js" defer></script>
   </body>
 </html>

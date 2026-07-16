@@ -8,9 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
 *.local
+
+# NOTE: css/style.css is intentionally COMMITTED so the pages open with no
+# build step. Only rebuild it (npm run css) if you change classes or tokens.
 
 # Editor directories and files
 .vscode/*

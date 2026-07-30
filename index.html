@@ -537,14 +537,14 @@
     <!-- =====================================================================
          Hero — video + live chat
          ===================================================================== -->
-    <section class="w-full pb-2 md:bg-surface lg:pb-8">
+    <section class="w-full bg-inv-background-1 pb-5 pt-4 lg:pb-8">
       <div class="mx-auto flex w-full max-w-[1462px] flex-col gap-2 px-3 md:px-4">
         <div class="flex flex-col items-start justify-center gap-3 lg:flex-row lg:gap-8">
           <div class="flex w-full min-w-0 flex-1 flex-col">
-            <!-- mobile: video + show-info share one full-bleed surface block.
-                 desktop: transparent (the whole hero section is surface). -->
-            <div class="-mx-3 flex flex-col bg-surface md:mx-0 md:gap-6 md:bg-transparent">
-              <div class="relative overflow-hidden shadow-[inset_0_0_20px_0_rgba(0,0,0,0.2)] md:rounded-2xl">
+            <!-- mobile: video + show-info share one full-bleed block.
+                 desktop: transparent (the whole hero section is the dark inv-background-1 surface). -->
+            <div class="-mx-3 flex flex-col bg-inv-background-1 md:mx-0 md:gap-6 md:bg-transparent">
+              <div class="relative overflow-hidden shadow-[0_0_100px_0_rgba(74,161,255,0.35)] md:rounded-2xl md:outline md:outline-1 md:-outline-offset-1 md:outline-inv-card-border">
                 <div style="padding: 56.25% 0 0 0; position: relative">
                   <iframe
                     src="https://player.vimeo.com/video/1207428466?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -556,87 +556,147 @@
                 </div>
               </div>
 
-              <div class="flex w-full items-center gap-4 px-3 py-2.5 md:gap-3 md:rounded-full md:bg-card-1 md:py-2 md:pl-1.5 md:pr-4">
-                <a href="#" class="flex min-w-0 flex-1 items-center gap-2.5">
-                  <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-14">
-                    <img src="assets/img/hero-logo.png" alt="" class="size-full object-cover" />
-                  </span>
-                  <span class="min-w-0 truncate font-heading text-sm font-extrabold text-fg-high md:text-xl">
-                    <span class="md:hidden">The EPL Show</span>
-                    <span class="hidden md:inline">The Europe Premier League Show</span>
-                  </span>
-                </a>
-                <div class="flex shrink-0 items-center gap-2">
-                  <button type="button" class="flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 font-heading text-xs font-extrabold text-white transition hover:bg-primary-text md:px-4 md:py-2 md:text-sm">
-                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
-                    Subscribe
-                  </button>
-                  <button type="button" aria-label="Share" class="grid size-8 shrink-0 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 md:size-9">
-                    <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
-                  </button>
+              <div class="flex flex-col items-start justify-center gap-4 rounded-xl px-3 py-2.5 md:px-0 md:py-0">
+                <div class="flex w-full items-center justify-between gap-3">
+                  <div class="flex min-w-0 flex-1 items-center gap-2.5">
+                    <span class="size-8 shrink-0 overflow-hidden rounded-full border border-inv-border-low">
+                      <img src="assets/img/hero-logo.png" alt="" class="size-full object-cover" />
+                    </span>
+                    <span class="flex h-6 shrink-0 items-center justify-center rounded-md bg-tone-red px-2 font-heading text-sm font-extrabold text-tone-red-foreground">LIVE</span>
+                    <span class="min-w-0 truncate font-heading text-xl font-extrabold text-inv-foreground-high">Crossing Lines</span>
+                  </div>
+                  <div class="flex shrink-0 items-center gap-3">
+                    <button type="button" aria-label="Notifications" class="grid size-10 place-items-center rounded-full outline outline-1 -outline-offset-1 outline-inv-border-medium text-inv-foreground-high transition hover:bg-white/5">
+                      <svg class="size-5" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.44171 19.2502C9.59515 19.5292 9.82071 19.762 10.0948 19.9241C10.369 20.0862 10.6816 20.1717 11 20.1717C11.3185 20.1717 11.6311 20.0862 11.9053 19.9241C12.1794 19.762 12.4049 19.5292 12.5584 19.2502M5.5 7.3335C5.5 5.87481 6.07946 4.47586 7.11091 3.44441C8.14236 2.41296 9.54131 1.8335 11 1.8335C12.4587 1.8335 13.8576 2.41296 14.8891 3.44441C15.9205 4.47586 16.5 5.87481 16.5 7.3335C16.5 13.7502 19.25 15.5835 19.25 15.5835H2.75C2.75 15.5835 5.5 13.7502 5.5 7.3335Z" /></svg>
+                    </button>
+                    <button type="button" aria-label="Share" class="grid size-10 place-items-center rounded-full outline outline-1 -outline-offset-1 outline-inv-border-medium text-inv-foreground-high transition hover:bg-white/5">
+                      <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
+                    </button>
+                  </div>
                 </div>
+                <p class="w-full font-heading text-2xl font-extrabold leading-7 text-inv-foreground-high">NFL Picks — Chiefs vs Bills Week 14 Preview with Joe Rogan</p>
+                <p class="w-full max-w-[600px] font-body text-base leading-6 text-inv-foreground-medium">
+                  Joe Rogan and the BetUS desk break down Chiefs at Bills — sharp picks on the spread, injury report reactions, and three best bets our chatters are tail...
+                  <button type="button" class="font-body font-bold text-inv-primary-text">Show More</button>
+                </p>
               </div>
             </div>
           </div>
 
           <!-- live chat -->
-          <aside class="chat flex w-full shrink-0 flex-col gap-3 rounded-xl border border-border-card bg-card-1 p-4 lg:w-[430px] lg:rounded-2xl">
+          <aside class="chat flex w-full shrink-0 flex-col gap-3 rounded-xl border border-inv-card-border bg-inv-card-1 p-4 lg:w-[371px] lg:h-[727px] lg:rounded-2xl">
             <div class="flex w-full items-center justify-between">
               <div class="flex items-center gap-3">
-                <h3 class="text-sm leading-tight text-fg-high">Live Chat</h3>
+                <h3 class="text-sm leading-tight text-inv-foreground-high">Live Chat</h3>
                 <span class="flex items-center gap-1.5">
                   <span class="size-2 rounded-full bg-green-500"></span>
-                  <span class="font-heading text-sm font-normal text-fg-high">428 in chat</span>
+                  <span class="font-heading text-sm font-normal text-inv-foreground-high">428 in chat</span>
                 </span>
               </div>
-              <button type="button" aria-label="Toggle chat" aria-expanded="true" class="chat-toggle text-fg-medium">
+              <button type="button" aria-label="Toggle chat" aria-expanded="true" class="chat-toggle text-inv-foreground-medium">
                 <span class="chat-icon block transition-transform">
                   <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6" /></svg>
                 </span>
               </button>
             </div>
 
-            <div class="chat-body flex flex-col gap-3">
-              <div class="flex h-[130px] w-full flex-col justify-end gap-0.5 overflow-y-auto rounded-lg bg-card-3 px-2.5 py-1 no-scrollbar lg:h-[419px]">
+            <div class="chat-body flex min-h-0 flex-1 flex-col gap-3">
+              <div class="flex h-[130px] w-full flex-col justify-end gap-0.5 overflow-y-auto rounded-lg bg-white/5 px-2.5 py-1 no-scrollbar lg:h-auto lg:flex-1">
                 <!-- REPEAT: one <div> per chat message -->
                 <div class="w-full py-2 lg:py-3">
-                  <p class="text-sm leading-normal">
-                    <span class="font-body font-bold text-primary-text">@JenC</span>
-                    <span class="ml-2 font-body text-fg-high">Rogan looks great today</span>
-                  </p>
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@JenC</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">Rogan looks great today</p>
                 </div>
                 <div class="w-full py-2 lg:py-3">
-                  <p class="text-sm leading-normal">
-                    <span class="font-body font-bold text-primary-text">@SamL</span>
-                    <span class="ml-2 font-body text-fg-high">the Georgia take is wild</span>
-                  </p>
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@SamL</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">the Georgia take is wild</p>
                 </div>
                 <div class="w-full py-2 lg:py-3">
-                  <p class="text-sm leading-normal">
-                    <span class="font-body font-bold text-primary-text">@JamK</span>
-                    <span class="ml-2 font-body text-fg-high">I can't believe how intense the debate got!</span>
-                  </p>
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@JamK</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">I can't believe how intense the debate got!</p>
                 </div>
                 <div class="w-full py-2 lg:py-3">
-                  <p class="text-sm leading-normal">
-                    <span class="font-body font-bold text-primary-text">@AlexT</span>
-                    <span class="ml-2 font-body text-fg-high">That twist at the end was unexpected!</span>
-                  </p>
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@AlexT</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">That twist at the end was unexpected!</p>
                 </div>
                 <div class="w-full py-2 lg:py-3">
-                  <p class="text-sm leading-normal">
-                    <span class="font-body font-bold text-primary-text">@ChrisM</span>
-                    <span class="ml-2 font-body text-fg-high">The play was top-notch this season.</span>
-                  </p>
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@ChrisM</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">The play was top-notch this season.</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@JenC</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">Rogan looks great today</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@SamL</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">the Georgia take is wild</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@JamK</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:17 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">I can't believe how intense the debate got!</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@AlexT</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:18 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">That twist at the end was unexpected!</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@ChrisM</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:18 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">The play was top-notch this season.</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@JenC</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:19 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">Rogan looks great today</p>
+                </div>
+                <div class="w-full py-2 lg:py-3">
+                  <div class="flex w-full items-center justify-between gap-2">
+                    <span class="font-body text-sm font-bold text-inv-primary-text">@SamL</span>
+                    <span class="shrink-0 font-body text-xs font-normal text-inv-foreground-low">10:19 AM</span>
+                  </div>
+                  <p class="font-body text-sm leading-normal text-inv-foreground-high">the Georgia take is wild</p>
                 </div>
                 <!-- /REPEAT -->
               </div>
 
-              <!-- logged-out CTA on mobile, message input on desktop -->
-              <button type="button" class="w-full rounded-lg border border-border-low bg-white px-3 py-2.5 text-left font-body text-sm text-fg-low transition hover:border-primary lg:hidden">
+              <!-- logged-out CTA: mobile keeps the solid card style, desktop matches the Figma "Log In to Chat" outline input -->
+              <button type="button" class="w-full rounded-lg border border-inv-card-border bg-inv-card-1 px-3 py-2.5 text-left font-body text-sm text-inv-foreground-low transition hover:border-primary lg:hidden">
                 Log In to Chat
               </button>
-              <input type="text" placeholder="Say Something..." class="hidden w-full rounded-lg border border-border-low bg-white px-3 py-2.5 font-body text-sm text-fg-high placeholder:text-fg-low focus:border-primary focus:outline-none lg:block" />
+              <button type="button" class="hidden h-10 w-full items-center rounded-lg pl-3.5 pr-2 text-left font-body text-sm text-inv-foreground-low outline outline-1 -outline-offset-1 outline-inv-foreground-medium transition hover:outline-primary lg:flex">
+                Log In to Chat
+              </button>
             </div>
           </aside>
         </div>
@@ -644,267 +704,104 @@
     </section>
 
     <!-- =====================================================================
-         Jump to Show
+         Jump to: — anchor links
          ===================================================================== -->
     <div class="mx-auto w-full max-w-[1462px] px-3 pt-2 md:px-4 md:pt-6">
+      <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
       <div class="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-3">
-        <span class="shrink-0 font-heading text-sm font-extrabold leading-4 text-fg-high md:text-base md:leading-5">
-          Jump to Show<span class="hidden md:inline">:</span>
+        <span class="shrink-0 font-heading text-base font-extrabold leading-5 text-fg-high">
+          Jump to:
         </span>
         <div class="flex gap-2 overflow-x-auto no-scrollbar">
-          <!-- REPEAT: one <button> per show -->
+          <!-- REPEAT: one <button> per anchor -->
           <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            NBA
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+            NFL
+            <svg class="size-3.5 rotate-90" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.4175 10.9783C8.30667 10.9783 8.19583 10.9375 8.10833 10.85C7.93917 10.6808 7.93917 10.4008 8.10833 10.2317L11.34 7L8.10833 3.76833C7.93917 3.59917 7.93917 3.31917 8.10833 3.15C8.2775 2.98083 8.5575 2.98083 8.72667 3.15L12.2675 6.69083C12.4367 6.86 12.4367 7.14 12.2675 7.30917L8.72667 10.85C8.63917 10.9375 8.52833 10.9783 8.4175 10.9783Z" fill="currentColor" /><path d="M11.8592 7.4375H2.04167C1.8025 7.4375 1.60417 7.23917 1.60417 7C1.60417 6.76083 1.8025 6.5625 2.04167 6.5625H11.8592C12.0983 6.5625 12.2967 6.76083 12.2967 7C12.2967 7.23917 12.0983 7.4375 11.8592 7.4375Z" fill="currentColor" /></svg>
+          </button>
+          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
+            NCAA
+            <svg class="size-3.5 rotate-90" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.4175 10.9783C8.30667 10.9783 8.19583 10.9375 8.10833 10.85C7.93917 10.6808 7.93917 10.4008 8.10833 10.2317L11.34 7L8.10833 3.76833C7.93917 3.59917 7.93917 3.31917 8.10833 3.15C8.2775 2.98083 8.5575 2.98083 8.72667 3.15L12.2675 6.69083C12.4367 6.86 12.4367 7.14 12.2675 7.30917L8.72667 10.85C8.63917 10.9375 8.52833 10.9783 8.4175 10.9783Z" fill="currentColor" /><path d="M11.8592 7.4375H2.04167C1.8025 7.4375 1.60417 7.23917 1.60417 7C1.60417 6.76083 1.8025 6.5625 2.04167 6.5625H11.8592C12.0983 6.5625 12.2967 6.76083 12.2967 7C12.2967 7.23917 12.0983 7.4375 11.8592 7.4375Z" fill="currentColor" /></svg>
           </button>
           <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
             MLB
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+            <svg class="size-3.5 rotate-90" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.4175 10.9783C8.30667 10.9783 8.19583 10.9375 8.10833 10.85C7.93917 10.6808 7.93917 10.4008 8.10833 10.2317L11.34 7L8.10833 3.76833C7.93917 3.59917 7.93917 3.31917 8.10833 3.15C8.2775 2.98083 8.5575 2.98083 8.72667 3.15L12.2675 6.69083C12.4367 6.86 12.4367 7.14 12.2675 7.30917L8.72667 10.85C8.63917 10.9375 8.52833 10.9783 8.4175 10.9783Z" fill="currentColor" /><path d="M11.8592 7.4375H2.04167C1.8025 7.4375 1.60417 7.23917 1.60417 7C1.60417 6.76083 1.8025 6.5625 2.04167 6.5625H11.8592C12.0983 6.5625 12.2967 6.76083 12.2967 7C12.2967 7.23917 12.0983 7.4375 11.8592 7.4375Z" fill="currentColor" /></svg>
           </button>
           <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            World Cup Show
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+            Interviews
+            <svg class="size-3.5 rotate-90" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.4175 10.9783C8.30667 10.9783 8.19583 10.9375 8.10833 10.85C7.93917 10.6808 7.93917 10.4008 8.10833 10.2317L11.34 7L8.10833 3.76833C7.93917 3.59917 7.93917 3.31917 8.10833 3.15C8.2775 2.98083 8.5575 2.98083 8.72667 3.15L12.2675 6.69083C12.4367 6.86 12.4367 7.14 12.2675 7.30917L8.72667 10.85C8.63917 10.9375 8.52833 10.9783 8.4175 10.9783Z" fill="currentColor" /><path d="M11.8592 7.4375H2.04167C1.8025 7.4375 1.60417 7.23917 1.60417 7C1.60417 6.76083 1.8025 6.5625 2.04167 6.5625H11.8592C12.0983 6.5625 12.2967 6.76083 12.2967 7C12.2967 7.23917 12.0983 7.4375 11.8592 7.4375Z" fill="currentColor" /></svg>
           </button>
           <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            The Champions League Show
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
-          </button>
-          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            EPL
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
-          </button>
-          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            NFL
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
-          </button>
-          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            NCAAB
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
-          </button>
-          <button type="button" class="flex h-[34px] shrink-0 items-center gap-1 rounded-full border border-border-low pl-3.5 pr-3 font-heading text-base font-extrabold text-fg-high transition hover:bg-card-3">
-            The College Football Show
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+            Full Shows
+            <svg class="size-3.5 rotate-90" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.4175 10.9783C8.30667 10.9783 8.19583 10.9375 8.10833 10.85C7.93917 10.6808 7.93917 10.4008 8.10833 10.2317L11.34 7L8.10833 3.76833C7.93917 3.59917 7.93917 3.31917 8.10833 3.15C8.2775 2.98083 8.5575 2.98083 8.72667 3.15L12.2675 6.69083C12.4367 6.86 12.4367 7.14 12.2675 7.30917L8.72667 10.85C8.63917 10.9375 8.52833 10.9783 8.4175 10.9783Z" fill="currentColor" /><path d="M11.8592 7.4375H2.04167C1.8025 7.4375 1.60417 7.23917 1.60417 7C1.60417 6.76083 1.8025 6.5625 2.04167 6.5625H11.8592C12.0983 6.5625 12.2967 6.76083 12.2967 7C12.2967 7.23917 12.0983 7.4375 11.8592 7.4375Z" fill="currentColor" /></svg>
           </button>
           <!-- /REPEAT -->
         </div>
       </div>
+
+      <!-- Subscribe alert -->
+      <div class="relative flex w-full items-center gap-2 overflow-hidden rounded-lg bg-warning px-3 py-2.5 outline outline-[0.25px] -outline-offset-1 outline-border-low md:w-96 md:shrink-0">
+        <svg class="size-5 shrink-0 text-fg-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+          <path d="M22 8c0-2.3-.8-4.3-2-6" />
+          <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+          <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+        </svg>
+        <div class="flex flex-1 flex-col items-start gap-1">
+          <p class="font-heading text-xs font-bold leading-4 text-fg-high">+24 just subscribed</p>
+          <p class="font-body text-xs font-normal leading-4 text-fg-high">Tap subscribe to get the next drop</p>
+        </div>
+        <button type="button" class="flex h-8 min-w-20 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-fill-medium px-3 font-heading text-sm font-extrabold text-white">
+          Subscribe
+        </button>
+        <div class="absolute inset-x-0 bottom-0 h-[2px] bg-border-high"></div>
+      </div>
+      </div>
     </div>
 
     <!-- =====================================================================
-         Top Promotions — slider
+         Top Promotions
+         Fixed-width cards (min-w-[343px]) that flex-grow to fill the row when
+         they fit (3 cards today) and overflow into a horizontal scroll once
+         more are added — same markup on mobile and desktop, no JS required.
          ===================================================================== -->
-    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
-      <div class="flex w-full items-center gap-2">
-        <div class="flex min-w-0 flex-1 flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Top Promotions</h2>
-          </div>
-          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Your go-to features, all in one place</p>
-        </div>
-        <div class="flex items-center gap-2">
-          <button type="button" aria-label="Previous" class="slider-prev grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
-            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
-          </button>
-          <button type="button" aria-label="Next" class="slider-next grid size-8 place-items-center rounded-full border border-border-low text-fg-medium transition hover:bg-card-3 disabled:opacity-40 disabled:hover:bg-transparent">
-            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
-          </button>
-        </div>
+    <section class="mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+      <div class="flex flex-col gap-2">
+        <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-3xl md:leading-9">Top Promotions</h2>
+        <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Bonuses for new and returning players</p>
       </div>
 
-      <div class="slider-track -mr-3 mt-4 flex gap-2.5 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-        <!-- REPEAT: one <article> per promotion.
-             The 8 sample promos are listed 2x to fill the row (as in the
-             design). Your foreach replaces this whole block. -->
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-1.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/spade-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Crypto Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+      <div class="-mr-3 mt-4 flex gap-2 overflow-x-auto pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:gap-2.5 md:pr-0">
+        <!-- REPEAT: one <article> per promotion -->
+        <article class="relative flex h-[173px] w-[343px] min-w-[343px] flex-1 flex-col items-center justify-end overflow-hidden rounded-2xl md:h-[200px]">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/promo-top-1.png" />
+            <img src="assets/img/promo-top-1-mob.png" alt="225% Bonus up to $3,625" class="absolute inset-0 size-full object-cover" />
+          </picture>
+          <div class="relative flex w-full items-center justify-center bg-gradient-to-b from-[#001934]/0 to-[#001934] to-50% px-5 py-3">
+            <a href="#" class="flex h-10 w-full items-center justify-center rounded-full bg-inv-cta-3 font-heading text-lg font-extrabold text-white outline outline-[1.5px] -outline-offset-[1.5px] outline-inv-cta-3-border">
+              Join &amp; Claim
             </a>
           </div>
         </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-2.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+        <article class="relative flex h-[173px] w-[343px] min-w-[343px] flex-1 flex-col items-center justify-end overflow-hidden rounded-2xl md:h-[200px]">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/promo-top-2.png" />
+            <img src="assets/img/promo-top-2-mob.png" alt="200% Bonus up to $2,750" class="absolute inset-0 size-full object-cover" />
+          </picture>
+          <div class="relative flex w-full items-center justify-center bg-gradient-to-b from-[#001934]/0 to-[#001934] to-50% px-5 py-3">
+            <a href="#" class="flex h-10 w-full items-center justify-center rounded-full bg-inv-cta-3 font-heading text-lg font-extrabold text-white outline outline-[1.5px] -outline-offset-[1.5px] outline-inv-cta-3-border">
+              Join &amp; Claim
             </a>
           </div>
         </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-3.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-4.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/zap-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">50% Sports Re-up Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-5.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">100% Crypto Re-up Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-6.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-7.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-8.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-1.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/spade-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Crypto Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-2.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-3.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-4.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/zap-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">50% Sports Re-up Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-5.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">100% Crypto Re-up Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-6.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">225% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-7.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-            </a>
-          </div>
-        </article>
-        <article class="relative flex h-[200px] w-[138px] shrink-0 items-end overflow-hidden rounded-[9px] bg-fill-medium p-3.5 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)]">
-          <img src="assets/img/promo-8.png" alt="" class="absolute inset-0 size-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary-muted from-0% to-transparent to-[51.5%]"></div>
-          <div class="relative flex w-full flex-col gap-[7px]">
-            <img src="assets/img/allsports-white.svg" alt="" class="size-5" />
-            <p class="max-w-[110px] font-display text-sm font-bold leading-4 text-white/90">200% Welcome Bonus</p>
-            <a href="#" class="flex items-center gap-1 font-body text-sm text-link">
-              Details
-              <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+        <article class="relative flex h-[173px] w-[343px] min-w-[343px] flex-1 flex-col items-center justify-end overflow-hidden rounded-2xl md:h-[200px]">
+          <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/promo-top-3.png" />
+            <img src="assets/img/promo-top-3-mob.png" alt="200% Bonus up to $3,000" class="absolute inset-0 size-full object-cover" />
+          </picture>
+          <div class="relative flex w-full items-center justify-center bg-gradient-to-b from-[#001934]/0 to-[#001934] to-50% px-5 py-3">
+            <a href="#" class="flex h-10 w-full items-center justify-center rounded-full bg-inv-cta-3 font-heading text-lg font-extrabold text-white outline outline-[1.5px] -outline-offset-[1.5px] outline-inv-cta-3-border">
+              Join &amp; Claim
             </a>
           </div>
         </article>
@@ -915,7 +812,7 @@
     <!-- =====================================================================
          Featured Products — slider on mobile, fills the bar on desktop
          ===================================================================== -->
-    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
+    <section class="slider mx-auto w-full max-w-[1462px] px-3 pt-6 pb-6 md:px-4 md:pt-8 md:pb-10">
       <div class="flex w-full items-center gap-2">
         <div class="flex min-w-0 flex-1 flex-col gap-2">
           <div class="flex items-center gap-2">
@@ -989,6 +886,74 @@
             <img src="assets/img/feat-sports.png" alt="" class="size-9 object-contain md:size-[45px]" />
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Sports</p>
           </div>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Notify Me — promo banner
+         Background image is 2 editor-uploaded slots (desktop / mobile), same
+         pattern as the Top Promotions cards.
+         ===================================================================== -->
+    <section class="w-full bg-surface px-3 py-6 md:px-6 md:py-8">
+      <div class="relative mx-auto h-[180px] w-full max-w-[996px] overflow-hidden rounded-2xl bg-[#00071c] md:h-[300px]">
+        <picture>
+          <source media="(min-width: 768px)" srcset="assets/img/notify-banner.png" />
+          <img src="assets/img/notify-banner-mob.png" alt="Crossing Lines" class="absolute inset-0 size-full object-cover" />
+        </picture>
+        <a href="#" class="absolute right-4 bottom-4 flex h-8 min-w-20 items-center justify-center gap-1.5 rounded-full bg-primary px-3 font-heading text-sm font-extrabold text-white transition hover:bg-primary-text md:right-auto md:bottom-10 md:left-[88px] md:h-14 md:min-w-32 md:gap-2 md:px-5 md:text-xl">
+          <svg class="size-4 md:size-5" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.44171 19.2502C9.59515 19.5292 9.82071 19.762 10.0948 19.9241C10.369 20.0862 10.6816 20.1717 11 20.1717C11.3185 20.1717 11.6311 20.0862 11.9053 19.9241C12.1794 19.762 12.4049 19.5292 12.5584 19.2502M5.5 7.3335C5.5 5.87481 6.07946 4.47586 7.11091 3.44441C8.14236 2.41296 9.54131 1.8335 11 1.8335C12.4587 1.8335 13.8576 2.41296 14.8891 3.44441C15.9205 4.47586 16.5 5.87481 16.5 7.3335C16.5 13.7502 19.25 15.5835 19.25 15.5835H2.75C2.75 15.5835 5.5 13.7502 5.5 7.3335Z" /></svg>
+          Notify Me
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Join Our Community
+         ===================================================================== -->
+    <section class="w-full bg-inv-background-2 px-3 py-6 md:px-4 md:py-[47px]">
+      <div class="mx-auto flex w-full max-w-[998px] flex-col gap-4">
+        <div class="flex w-full items-center gap-2">
+          <div class="flex min-w-0 flex-1 flex-col gap-2">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-inv-foreground-high md:text-3xl md:leading-9">Join Our Community</h2>
+            <p class="font-body text-sm font-normal leading-5 text-inv-foreground-medium md:text-base md:leading-6">Follow @BetUS for picks, drops &amp; behind-the-scenes</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- REPEAT: one <a> per network -->
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="url(#social-telegram-grad)" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.24248 15.8309C11.9068 13.7988 15.0171 12.459 16.5733 11.8117C21.0167 9.96359 21.94 9.64255 22.5418 9.63195C22.6741 9.62962 22.9701 9.66242 23.1618 9.81797C23.3236 9.94931 23.3682 10.1267 23.3895 10.2513C23.4108 10.3758 23.4373 10.6595 23.4162 10.8811C23.1755 13.4111 22.1336 19.5507 21.6035 22.3843C21.3792 23.5833 20.9376 23.9854 20.5101 24.0247C19.5809 24.1102 18.8754 23.4107 17.9754 22.8207C16.5672 21.8976 15.7717 21.323 14.4048 20.4222C12.8251 19.3812 13.8491 18.8091 14.7494 17.874C14.985 17.6293 19.0789 13.9056 19.1581 13.5678C19.168 13.5256 19.1772 13.3681 19.0836 13.285C18.9901 13.2018 18.852 13.2303 18.7524 13.2529C18.6111 13.2849 16.3615 14.7718 12.0035 17.7136C11.3649 18.1521 10.7866 18.3658 10.2683 18.3546C9.69706 18.3422 8.59814 18.0315 7.78121 17.766C6.77921 17.4403 5.98284 17.2681 6.05218 16.7149C6.0883 16.4268 6.48507 16.1321 7.24248 15.8309Z" fill="white" />
+              <defs>
+                <linearGradient id="social-telegram-grad" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2AABEE" />
+                  <stop offset="1" stop-color="#229ED9" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">Telegram</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24.4351 2.53857H28.9331L19.1063 13.7699L30.6667 29.0532H21.615L14.5254 19.784L6.4133 29.0532H1.91262L12.4233 17.04L1.33337 2.53857H10.6149L17.0232 11.011L24.4351 2.53857ZM22.8565 26.3609H25.3488L9.26057 5.08942H6.58599L22.8565 26.3609Z" fill="white" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">X</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M31.3627 8.24705C31.1817 7.56627 30.8252 6.94494 30.3287 6.44526C29.8322 5.94557 29.2132 5.58505 28.5336 5.39978C26.0317 4.72705 16.0317 4.72705 16.0317 4.72705C16.0317 4.72705 6.03174 4.72705 3.52992 5.39978C2.85031 5.58505 2.23128 5.94557 1.73479 6.44526C1.23829 6.94494 0.881746 7.56627 0.700829 8.24705C0.0317384 10.7598 0.0317383 15.9998 0.0317383 15.9998C0.0317383 15.9998 0.0317384 21.2398 0.700829 23.7525C0.881746 24.4333 1.23829 25.0546 1.73479 25.5543C2.23128 26.054 2.85031 26.4145 3.52992 26.5998C6.03174 27.2725 16.0317 27.2725 16.0317 27.2725C16.0317 27.2725 26.0317 27.2725 28.5336 26.5998C29.2132 26.4145 29.8322 26.054 30.3287 25.5543C30.8252 25.0546 31.1817 24.4333 31.3627 23.7525C32.0317 21.2398 32.0317 15.9998 32.0317 15.9998C32.0317 15.9998 32.0317 10.7598 31.3627 8.24705Z" fill="#FF0302" />
+              <path d="M12.759 20.7581V11.2417L21.1227 15.9999L12.759 20.7581Z" fill="#FEFEFE" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">YouTube</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22.7633 0H17.3704V21.7971C17.3704 24.3942 15.2962 26.5276 12.715 26.5276C10.1337 26.5276 8.05955 24.3942 8.05955 21.7971C8.05955 19.2464 10.0877 17.1594 12.5767 17.0667V11.5942C7.09158 11.6869 2.66663 16.1855 2.66663 21.7971C2.66663 27.4551 7.18377 32 12.7611 32C18.3383 32 22.8555 27.4087 22.8555 21.7971V10.6203C24.8836 12.1044 27.3726 12.9855 30 13.0319V7.55942C25.9438 7.42029 22.7633 4.08116 22.7633 0Z" fill="white" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">TikTok</span>
+          </a>
           <!-- /REPEAT -->
         </div>
       </div>
@@ -1104,451 +1069,268 @@
     </section>
 
     <!-- =====================================================================
-         Coming up next — mobile only
-         ===================================================================== -->
-    <section class="px-3 pt-10 md:hidden">
-      <div class="relative flex h-[451px] flex-col overflow-hidden rounded-2xl px-6 pb-[15px] pt-6">
-        <img src="assets/img/upnext-bg.png" alt="" class="pointer-events-none absolute inset-0 size-full object-cover" />
-        <div class="relative flex w-full flex-col gap-4">
-          <p class="font-body text-xs text-[#d3dae6]">Don't miss this week</p>
-          <div class="flex flex-col items-center">
-            <p class="w-full font-display text-[35px] font-bold uppercase leading-[1.2] text-white">THE EPL</p>
-            <div class="w-full -rotate-[1.18deg]">
-              <div class="flex h-[57px] w-full items-center justify-center overflow-hidden bg-[#80e2ff] px-3.5">
-                <p class="whitespace-nowrap font-display text-[35px] font-bold uppercase leading-[1.2] text-[#010159]">PREDICTIONS</p>
-              </div>
-            </div>
-            <p class="w-full font-display text-[35px] font-bold uppercase leading-[1.2] text-white">SHOW</p>
-          </div>
-          <div class="flex items-center gap-2.5">
-            <div class="flex items-center gap-0.5">
-              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">4d</div>
-              <span class="font-heading text-sm text-white">:</span>
-              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">23h</div>
-              <span class="font-heading text-sm text-white">:</span>
-              <div class="flex h-8 w-[50px] items-center justify-center rounded-[10px] bg-white/10 font-heading text-sm font-extrabold text-white">40m</div>
-            </div>
-            <button type="button" class="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 font-heading text-sm font-extrabold text-fg-high transition hover:bg-white/90">
-              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg>
-              Remind Me
-            </button>
-          </div>
-          <p class="font-body text-xs text-[#d3dae6]">Friday 8:00 PM ET · live from the desk</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
          All Shows — one scrolling row per show (touch/trackpad scroll, no arrows)
          ===================================================================== -->
     <section class="mx-auto flex w-full max-w-[1462px] flex-col gap-5 px-3 pt-6 md:gap-7 md:px-4 md:pt-8">
       <div class="flex w-full items-center gap-2">
         <div class="flex min-w-0 flex-1 flex-col gap-2">
-          <div class="flex items-center gap-2">
-            <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">All Shows</h2>
-          </div>
-          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Find your favorite shows and new episodes.</p>
+          <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-3xl md:leading-9">Replay &amp; Catch Up</h2>
+          <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Pick up where you left off. Segments from the last two weeks.</p>
         </div>
       </div>
 
       <!-- REPEAT: one block per show -->
       <div class="flex w-full flex-col gap-3">
         <div class="flex w-full items-center gap-3">
-          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
-            <img src="assets/img/avatar-nba.png" alt="" class="size-full object-cover" />
-          </span>
-          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NBA Show</h3>
-          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">NFL: Picks, Predictions &amp; News</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
         <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-          <!-- REPEAT: one <article> per episode -->
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <!-- REPEAT: one <a> per segment -->
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:25</span>
+              <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:37</span>
+              <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">30:48</span>
+              <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:02</span>
+              <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:15</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
-            </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nba-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:29</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Knicks vs Spurs NBA Finals Game 5 – NBA Expert Picks, Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
-            </div>
-          </article>
-          <!-- /REPEAT episodes -->
+          </a>
+          <!-- /REPEAT segments -->
         </div>
       </div>
 
       <div class="flex w-full flex-col gap-3">
         <div class="flex w-full items-center gap-3">
-          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
-            <img src="assets/img/avatar-nfl.png" alt="" class="size-full object-cover" />
-          </span>
-          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NFL Show</h3>
-          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">NCAAF: Picks, Predictions &amp; News</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
         <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <!-- REPEAT: one <a> per segment -->
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:41</span>
+              <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">31:52</span>
+              <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:05</span>
+              <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 days ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:18</span>
+              <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:30</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
-            </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">32:46</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">NFL Wild Card Predictions | Playoff Picks, Odds &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
-            </div>
-          </article>
+          </a>
+          <!-- /REPEAT segments -->
         </div>
       </div>
 
       <div class="flex w-full flex-col gap-3">
         <div class="flex w-full items-center gap-3">
-          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
-            <img src="assets/img/avatar-champions.png" alt="" class="size-full object-cover" />
-          </span>
-          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The Champions League Show</h3>
-          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">MLB: Picks, Predictions &amp; News</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
         <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <!-- REPEAT: one <a> per segment -->
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:03</span>
+              <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:17</span>
+              <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:29</span>
+              <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">33:45</span>
+              <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:00</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
-            </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-champions-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:11</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Champions League Semifinals | Soccer Predictions &amp; Best Bets</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
-            </div>
-          </article>
+          </a>
+          <!-- /REPEAT segments -->
         </div>
       </div>
 
       <div class="flex w-full flex-col gap-3">
         <div class="flex w-full items-center gap-3">
-          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
-            <img src="assets/img/avatar-premier.png" alt="" class="size-full object-cover" />
-          </span>
-          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The Premier League Show</h3>
-          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">Interviews</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
         <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <!-- REPEAT: one <a> per segment -->
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:26</span>
+              <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:39</span>
+              <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">34:52</span>
+              <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:07</span>
+              <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:20</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
-            </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-premier-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:32</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Premier League Picks Matchday 38 | Soccer Predictions &amp; Betting Analysis</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
-            </div>
-          </article>
+          </a>
+          <!-- /REPEAT segments -->
         </div>
       </div>
 
       <div class="flex w-full flex-col gap-3">
         <div class="flex w-full items-center gap-3">
-          <span class="size-9 shrink-0 overflow-hidden rounded-full bg-fg-high md:size-12">
-            <img src="assets/img/avatar-ncaab.png" alt="" class="size-full object-cover" />
-          </span>
-          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">The NCAAB Show</h3>
-          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">Go to Show</a>
+          <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">Full Shows</h3>
+          <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
         <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          <!-- REPEAT: one <a> per segment -->
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">35:46</span>
+              <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">6 days ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:00</span>
+              <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">2 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-3.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:14</span>
+              <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">3 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
+          </a>
+          <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:27</span>
+              <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">4 weeks ago</p>
+            <div class="flex w-full flex-col gap-3.5 px-3.5">
+              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-2.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:39</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">5 days ago</p>
-            </div>
-          </article>
-          <article class="flex w-[304px] shrink-0 flex-col gap-3.5 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px] md:w-[400px]">
-            <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
-              <img src="assets/img/show-ncaab-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
-              <span class="absolute bottom-1.5 left-1.5 flex h-4 items-center justify-center rounded-md bg-black px-1.5 font-heading text-[10px] font-bold leading-[1.2] text-white">36:50</span>
-            </div>
-            <div class="flex w-full flex-col gap-2 px-2.5">
-              <h4 class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high [text-box-edge:cap_alphabetic] [text-box-trim:trim-both]">Round of Four D1 Men's College Basketball Preview | College Basketball Picks for April 4th</h4>
-              <p class="font-body text-xs font-normal leading-4 text-fg-low">1 week ago</p>
-            </div>
-          </article>
+          </a>
+          <!-- /REPEAT segments -->
         </div>
       </div>
       <!-- /REPEAT shows -->
     </section>
 
     <!-- =====================================================================
-         Join Our Community
+         As Featured On
          ===================================================================== -->
-    <section class="mx-auto w-full max-w-[1462px] px-3 py-10 md:px-4">
-      <div class="mx-auto flex w-full flex-col gap-4">
-        <div class="flex w-full items-center gap-2">
-          <div class="flex min-w-0 flex-1 flex-col gap-2">
-            <div class="flex items-center gap-2">
-              <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Join Our Community</h2>
-            </div>
-            <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Follow @BetUS for picks, drops &amp; behind-the-scenes</p>
-          </div>
+    <section class="mt-[72px] flex w-full flex-col items-center gap-3 bg-inv-background-2 px-3 pt-3 pb-5 md:pb-7">
+      <p class="w-full text-center font-heading text-xs font-bold leading-[1.2] text-inv-foreground-low md:text-sm">As Featured on</p>
+      <div class="flex flex-wrap items-center justify-center gap-1 md:gap-2">
+        <img src="assets/img/logo-newsweek.svg" alt="Newsweek" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-forbes.svg" alt="Forbes" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <div class="flex h-[43px] w-[119px] items-center justify-center rounded-lg bg-inv-alpha-10 md:h-14 md:w-[157px] md:rounded-[10px]">
+          <img src="assets/img/logo-sportsillustrated.svg" alt="Sports Illustrated" class="h-[22px] w-[84px] md:h-[29px] md:w-[110px]" />
         </div>
-        <div class="flex items-center gap-2">
-          <!-- REPEAT: one <a> per network -->
-          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
-            <img src="assets/img/social-telegram.svg" alt="" class="size-7" />
-            <span class="text-center font-heading text-xs font-extrabold text-fg-high">Telegram</span>
-          </a>
-          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
-            <img src="assets/img/social-x.svg" alt="" class="size-7" />
-            <span class="text-center font-heading text-xs font-extrabold text-fg-high">X</span>
-          </a>
-          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
-            <img src="assets/img/social-youtube.svg" alt="" class="size-7" />
-            <span class="text-center font-heading text-xs font-extrabold text-fg-high">YouTube</span>
-          </a>
-          <a href="#" class="flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-clip rounded-xl bg-card-3 px-2 py-3 transition hover:bg-border-low">
-            <img src="assets/img/social-tiktok.svg" alt="" class="size-7" />
-            <span class="text-center font-heading text-xs font-extrabold text-fg-high">TikTok</span>
-          </a>
-          <!-- /REPEAT -->
-        </div>
+        <img src="assets/img/logo-nbcsports.svg" alt="NBC Sports" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-tmz.svg" alt="TMZ" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-foxsports.svg" alt="Fox Sports" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
       </div>
     </section>
 

@@ -119,6 +119,35 @@
   --color-border-low: #dde3ed;
   --color-border-medium: #9eaabe;
   --color-border-card: #e7ecf3;
+  --color-border-high: #282e38;
+
+  /* Status */
+  --color-warning: #ffc107;
+
+  /* Frosted-glass CTA used on top of promo card images */
+  --color-inv-cta-3: #ffffff2e;
+  --color-inv-cta-3-border: #83c7ff;
+
+  /* Inverse (dark) surface — used by the hero band per the updated Figma design */
+  --color-inv-background-1: #000c19;
+  --color-inv-background-2: #001934;
+  --color-inv-card-1: #001934;
+  --color-inv-card-border: #212a3b;
+  --color-inv-border-low: #8e9ab0;
+  --color-inv-border-medium: #afb9cb;
+  --color-inv-foreground-high: #ffffff;
+  --color-inv-foreground-medium: #d3dae6;
+  --color-inv-foreground-low: #9eaabe;
+  --color-inv-primary-text: #a4d8ff;
+  --color-inv-alpha-0: rgba(255, 255, 255, 0);
+  --color-inv-alpha-10: rgba(255, 255, 255, 0.1);
+  --color-inv-alpha-50: rgba(255, 255, 255, 0.1);
+  --color-inv-alpha-60: rgba(255, 255, 255, 0.6);
+
+  /* Status tones */
+  --color-tone-red: #ec0100;
+  --color-tone-red-foreground: #feffff;
+  --color-primary-foreground: #ffffff;
 
   /* Radii */
   --radius-card: 12px;

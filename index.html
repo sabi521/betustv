@@ -22,7 +22,7 @@
     <section class="w-full border-t border-border-card bg-surface py-[7px] md:border-t-0 md:py-3">
       <div class="mx-auto flex max-w-[1430px] items-center gap-2 px-3 md:gap-[18px] md:px-4">
         <div class="slider relative min-w-0 flex-1">
-          <div class="slider-track flex gap-1 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar [-webkit-overflow-scrolling:touch]">
+          <div class="slider-track flex gap-1 overflow-x-auto overflow-y-hidden scroll-smooth no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
             <!-- REPEAT: one <article> per game.
                  The 3 sample games are listed 3x to fill the ticker (as in the
                  design). Your foreach replaces this whole block. -->
@@ -537,7 +537,7 @@
     <!-- =====================================================================
          Hero — video + live chat
          ===================================================================== -->
-    <section class="w-full bg-inv-background-1 pb-5 pt-4 lg:pb-8">
+    <section class="w-full bg-inv-background-1 pb-5 pt-0 md:pt-4 lg:pb-8">
       <div class="mx-auto flex w-full max-w-[1462px] flex-col gap-2 px-3 md:px-4">
         <div class="flex flex-col items-start justify-center gap-3 lg:flex-row lg:gap-8">
           <div class="flex w-full min-w-0 flex-1 flex-col">
@@ -574,11 +574,17 @@
                     </button>
                   </div>
                 </div>
-                <p class="w-full font-heading text-2xl font-extrabold leading-7 text-inv-foreground-high">NFL Picks — Chiefs vs Bills Week 14 Preview with Joe Rogan</p>
-                <p class="w-full max-w-[600px] font-body text-base leading-6 text-inv-foreground-medium">
-                  Joe Rogan and the BetUS desk break down Chiefs at Bills — sharp picks on the spread, injury report reactions, and three best bets our chatters are tail...
-                  <button type="button" class="font-body font-bold text-inv-primary-text">Show More</button>
-                </p>
+                <p class="w-full font-heading text-base font-extrabold leading-5 text-inv-foreground-high md:text-2xl md:leading-7">NFL Picks — Chiefs vs Bills Week 14 Preview with Joe Rogan</p>
+                <div class="w-full max-w-[600px]">
+                  <p class="font-body text-base leading-6 text-inv-foreground-medium md:hidden">
+                    Joe Rogan and the BetUS desk break down Chiefs at Bills — sharp picks on the spread...
+                    <a href="#" class="font-body font-bold text-inv-primary-text">Show More</a>
+                  </p>
+                  <p class="hidden font-body text-base leading-6 text-inv-foreground-medium md:inline">
+                    Joe Rogan and the BetUS desk break down Chiefs at Bills — sharp picks on the spread, injury report reactions, and three best bets our chatters are tail...
+                    <a href="#" class="font-body font-bold text-inv-primary-text">Show More</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -707,7 +713,7 @@
          Jump to: — anchor links
          ===================================================================== -->
     <div class="mx-auto w-full max-w-[1462px] px-3 pt-2 md:px-4 md:pt-6">
-      <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-3">
         <span class="shrink-0 font-heading text-base font-extrabold leading-5 text-fg-high">
           Jump to:
@@ -739,7 +745,7 @@
       </div>
 
       <!-- Subscribe alert -->
-      <div class="relative flex w-full items-center gap-2 overflow-hidden rounded-lg bg-warning px-3 py-2.5 outline outline-[0.25px] -outline-offset-1 outline-border-low md:w-96 md:shrink-0">
+      <div class="relative order-first flex w-96 items-center gap-2 overflow-hidden rounded-lg bg-warning px-3 py-2.5 outline outline-[0.25px] -outline-offset-1 outline-border-low lg:order-none lg:shrink-0">
         <svg class="size-5 shrink-0 text-fg-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M10.268 21a2 2 0 0 0 3.464 0" />
           <path d="M22 8c0-2.3-.8-4.3-2-6" />
@@ -770,7 +776,7 @@
         <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Bonuses for new and returning players</p>
       </div>
 
-      <div class="-mr-3 mt-4 flex gap-2 overflow-x-auto pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:gap-2.5 md:pr-0">
+      <div class="-mr-3 -ml-3 mt-4 flex gap-2 overflow-x-auto pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:gap-2.5 md:pl-4 md:pr-4">
         <!-- REPEAT: one <article> per promotion -->
         <article class="relative flex h-[173px] w-[343px] min-w-[343px] flex-1 flex-col items-center justify-end overflow-hidden rounded-2xl md:h-[200px]">
           <picture>
@@ -832,9 +838,9 @@
         </div>
       </div>
 
-      <!-- The bordered bar is the scroll content: it bleeds off the right edge
-           while scrolling, and pr-3 pulls it back 12px at the last slide. -->
-      <div class="slider-track -mr-3 mt-4 overflow-x-auto scroll-smooth pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+      <!-- The bordered bar is the scroll content: it bleeds off both edges
+           while scrolling, and pl-3/pr-3 pull it back 12px at the first/last slide. -->
+      <div class="slider-track -mr-3 -ml-3 mt-4 overflow-x-auto scroll-smooth pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
         <div class="relative flex w-max items-center rounded-xl border border-border-card bg-white p-1 md:w-full">
           <div class="pointer-events-none absolute inset-1 z-0 overflow-hidden rounded-lg">
             <img src="assets/img/feat-bg.png" alt="" class="absolute inset-0 size-full object-cover" />
@@ -981,7 +987,7 @@
         </div>
       </div>
 
-      <div class="slider-track -mr-3 mt-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+      <div class="slider-track -mr-3 -ml-3 mt-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
         <!-- REPEAT: one <article> per short (the NEW badge only shows on new ones).
              The 6 sample shorts are listed 2x to fill the row (as in the
              design). Your foreach replaces this whole block. -->
@@ -1085,14 +1091,14 @@
           <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">NFL: Picks, Predictions &amp; News</h3>
           <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
-        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="-mr-3 -ml-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
           <!-- REPEAT: one <a> per segment -->
           <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
               <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1101,7 +1107,7 @@
               <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1110,7 +1116,7 @@
               <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1119,7 +1125,7 @@
               <img src="assets/img/segment-nfl-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1132,14 +1138,14 @@
           <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">NCAAF: Picks, Predictions &amp; News</h3>
           <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
-        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="-mr-3 -ml-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
           <!-- REPEAT: one <a> per segment -->
           <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
               <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1148,7 +1154,7 @@
               <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1157,7 +1163,7 @@
               <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1166,7 +1172,7 @@
               <img src="assets/img/segment-ncaaf-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1179,14 +1185,14 @@
           <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">MLB: Picks, Predictions &amp; News</h3>
           <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
-        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="-mr-3 -ml-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
           <!-- REPEAT: one <a> per segment -->
           <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
               <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1195,7 +1201,7 @@
               <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1204,7 +1210,7 @@
               <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1213,7 +1219,7 @@
               <img src="assets/img/segment-mlb-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1226,14 +1232,14 @@
           <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">Interviews</h3>
           <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
-        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="-mr-3 -ml-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
           <!-- REPEAT: one <a> per segment -->
           <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
               <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1242,7 +1248,7 @@
               <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1251,7 +1257,7 @@
               <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1260,7 +1266,7 @@
               <img src="assets/img/segment-interviews-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1273,14 +1279,14 @@
           <h3 class="line-clamp-1 min-w-0 flex-1 font-heading text-base font-extrabold leading-5 text-fg-high md:text-xl md:leading-6">Full Shows</h3>
           <a href="#" class="shrink-0 font-heading text-sm font-extrabold text-primary-text hover:underline md:text-base">See All</a>
         </div>
-        <div class="-mr-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:mr-0 md:pr-0">
+        <div class="-mr-3 -ml-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
           <!-- REPEAT: one <a> per segment -->
           <a href="#" class="flex min-w-72 flex-1 flex-col items-center gap-4 overflow-hidden rounded-xl bg-card-3 p-0.5 pb-[18px]">
             <div class="relative w-full shrink-0 overflow-hidden rounded-[10px]">
               <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1289,7 +1295,7 @@
               <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1298,7 +1304,7 @@
               <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>
@@ -1307,7 +1313,7 @@
               <img src="assets/img/segment-fullshows-1.png" alt="" class="aspect-[300/167] w-full object-cover" />
             </div>
             <div class="flex w-full flex-col gap-3.5 px-3.5">
-              <p class="line-clamp-2 h-7 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
+              <p class="line-clamp-2 h-8 overflow-hidden font-heading text-sm font-extrabold leading-4 text-fg-high md:h-[41px] md:text-lg md:leading-[1.25]">Chiefs vs Bills Week 14 — three best bets</p>
               <p class="font-body text-sm text-fg-medium">2d ago</p>
             </div>
           </a>

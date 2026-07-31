@@ -76,6 +76,84 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* ---- Show more: measure real text, clip to 2 lines, "Show More" inline  */
+  var showMoreTexts = document.querySelectorAll(".show-more-text");
+
+  for (var q = 0; q < showMoreTexts.length; q++) {
+    setupShowMoreText(showMoreTexts[q]);
+  }
+
+  function setupShowMoreText(el) {
+    var fullText = el.textContent.trim();
+
+    var textSpan = document.createElement("span");
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "show-more-toggle ml-1 whitespace-nowrap font-body font-bold text-inv-primary-text";
+    toggle.textContent = "Show More";
+
+    el.textContent = "";
+    el.appendChild(textSpan);
+    el.appendChild(toggle);
+
+    var expanded = false;
+
+    function fits(words) {
+      textSpan.textContent = words.length === wordList.length ? fullText : words.join(" ") + "…";
+      return el.scrollHeight <= maxHeight + 1;
+    }
+
+    var wordList = fullText.split(" ");
+    var maxHeight = 0;
+
+    function collapse() {
+      maxHeight = (parseFloat(getComputedStyle(el).lineHeight) || 24) * 2;
+      textSpan.textContent = fullText;
+
+      if (el.scrollHeight <= maxHeight + 1) {
+        toggle.remove();
+        return;
+      }
+
+      if (!toggle.parentNode) el.appendChild(toggle);
+
+      var low = 0;
+      var high = wordList.length;
+
+      while (low < high) {
+        var mid = Math.ceil((low + high) / 2);
+        if (fits(wordList.slice(0, mid))) {
+          low = mid;
+        } else {
+          high = mid - 1;
+        }
+      }
+
+      textSpan.textContent = wordList.slice(0, low).join(" ") + "…";
+      toggle.textContent = "Show More";
+    }
+
+    function expand() {
+      textSpan.textContent = fullText;
+      toggle.textContent = "Show Less";
+    }
+
+    toggle.addEventListener("click", function () {
+      expanded = !expanded;
+      if (expanded) {
+        expand();
+      } else {
+        collapse();
+      }
+    });
+
+    collapse();
+
+    window.addEventListener("resize", function () {
+      if (!expanded) collapse();
+    });
+  }
+
   /* ---- Share: dropdown with Facebook / X / Copy Link -------------------- */
   var shares = document.querySelectorAll(".share");
 

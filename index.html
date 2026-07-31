@@ -569,9 +569,31 @@
                     <button type="button" aria-label="Notifications" class="grid size-10 place-items-center rounded-full outline outline-1 -outline-offset-1 outline-inv-border-medium text-inv-foreground-high transition hover:bg-white/5">
                       <svg class="size-5" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.44171 19.2502C9.59515 19.5292 9.82071 19.762 10.0948 19.9241C10.369 20.0862 10.6816 20.1717 11 20.1717C11.3185 20.1717 11.6311 20.0862 11.9053 19.9241C12.1794 19.762 12.4049 19.5292 12.5584 19.2502M5.5 7.3335C5.5 5.87481 6.07946 4.47586 7.11091 3.44441C8.14236 2.41296 9.54131 1.8335 11 1.8335C12.4587 1.8335 13.8576 2.41296 14.8891 3.44441C15.9205 4.47586 16.5 5.87481 16.5 7.3335C16.5 13.7502 19.25 15.5835 19.25 15.5835H2.75C2.75 15.5835 5.5 13.7502 5.5 7.3335Z" /></svg>
                     </button>
-                    <button type="button" aria-label="Share" class="grid size-10 place-items-center rounded-full outline outline-1 -outline-offset-1 outline-inv-border-medium text-inv-foreground-high transition hover:bg-white/5">
-                      <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
-                    </button>
+                    <div class="share relative">
+                      <button type="button" aria-label="Share" aria-expanded="false" aria-haspopup="true" class="share-toggle grid size-10 place-items-center rounded-full outline outline-1 -outline-offset-1 outline-inv-border-medium text-inv-foreground-high transition hover:bg-white/5">
+                        <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /><polyline points="16 6 12 2 8 6" /><line x1="12" x2="12" y1="2" y2="15" /></svg>
+                      </button>
+                      <div class="share-menu absolute right-0 top-full z-20 mt-2 hidden w-56 divide-y divide-inv-card-border overflow-hidden rounded-xl bg-inv-card-1 shadow-[0_8px_24px_0_rgba(0,0,0,0.4)]">
+                        <button type="button" class="share-facebook flex w-full items-center gap-3 px-4 py-3 text-left font-heading text-sm font-extrabold text-inv-foreground-high transition hover:bg-white/5">
+                          <span class="grid size-6 shrink-0 place-items-center rounded-full bg-white text-[#0f223d]">
+                            <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                          </span>
+                          <span>Share in Facebook</span>
+                        </button>
+                        <button type="button" class="share-x flex w-full items-center gap-3 px-4 py-3 text-left font-heading text-sm font-extrabold text-inv-foreground-high transition hover:bg-white/5">
+                          <span class="grid size-6 shrink-0 place-items-center rounded-full bg-white text-[#0f223d]">
+                            <svg class="size-3" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M24.4351 2.53857H28.9331L19.1063 13.7699L30.6667 29.0532H21.615L14.5254 19.784L6.4133 29.0532H1.91262L12.4233 17.04L1.33337 2.53857H10.6149L17.0232 11.011L24.4351 2.53857ZM22.8565 26.3609H25.3488L9.26057 5.08942H6.58599L22.8565 26.3609Z" /></svg>
+                          </span>
+                          <span>Share in X</span>
+                        </button>
+                        <button type="button" class="share-copy flex w-full items-center gap-3 px-4 py-3 text-left font-heading text-sm font-extrabold text-inv-foreground-high transition hover:bg-white/5">
+                          <span class="grid size-6 shrink-0 place-items-center rounded-full bg-white text-[#0f223d]">
+                            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+                          </span>
+                          <span>Copy Link</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <p class="w-full font-heading text-base font-extrabold leading-5 text-inv-foreground-high md:text-2xl md:leading-7">NFL Picks — Chiefs vs Bills Week 14 Preview with Joe Rogan</p>

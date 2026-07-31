@@ -132,6 +132,7 @@
   --color-inv-background-1: #000c19;
   --color-inv-background-2: #001934;
   --color-inv-card-1: #001934;
+  --color-inv-card-2: #00264f;
   --color-inv-card-border: #212a3b;
   --color-inv-border-low: #8e9ab0;
   --color-inv-border-medium: #afb9cb;
@@ -139,6 +140,7 @@
   --color-inv-foreground-medium: #d3dae6;
   --color-inv-foreground-low: #9eaabe;
   --color-inv-primary-text: #a4d8ff;
+  --color-inv-link: #a4d8ff;
   --color-inv-alpha-0: rgba(255, 255, 255, 0);
   --color-inv-alpha-10: rgba(255, 255, 255, 0.1);
   --color-inv-alpha-50: rgba(255, 255, 255, 0.1);
@@ -147,6 +149,8 @@
   /* Status tones */
   --color-tone-red: #ec0100;
   --color-tone-red-foreground: #feffff;
+  --color-tone-navy: #3c66b3;
+  --color-tone-navy-foreground: #feffff;
   --color-primary-foreground: #ffffff;
 
   /* Radii */

@@ -55,4 +55,103 @@ document.addEventListener("DOMContentLoaded", function () {
       if (bar) bar.remove();
     });
   }
+
+  /* ---- Load more: reveal the next hidden batch, then drop the button ---- */
+  var loadMores = document.querySelectorAll(".load-more");
+
+  for (var m = 0; m < loadMores.length; m++) {
+    setupLoadMore(loadMores[m]);
+  }
+
+  function setupLoadMore(section) {
+    var button = section.querySelector(".load-more-button");
+    if (!button) return;
+
+    button.addEventListener("click", function () {
+      var items = section.querySelectorAll(".load-more-item");
+      for (var n = 0; n < items.length; n++) {
+        items[n].classList.remove("md:hidden");
+      }
+      button.remove();
+    });
+  }
+
+  /* ---- Share: dropdown with Facebook / X / Copy Link -------------------- */
+  var shares = document.querySelectorAll(".share");
+
+  for (var p = 0; p < shares.length; p++) {
+    setupShare(shares[p]);
+  }
+
+  function setupShare(share) {
+    var toggle = share.querySelector(".share-toggle");
+    var menu = share.querySelector(".share-menu");
+    if (!toggle || !menu) return;
+
+    function close() {
+      menu.classList.add("hidden");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function open() {
+      menu.classList.remove("hidden");
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (menu.classList.contains("hidden")) {
+        open();
+      } else {
+        close();
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!share.contains(event.target)) close();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") close();
+    });
+
+    var facebookButton = share.querySelector(".share-facebook");
+    if (facebookButton) {
+      facebookButton.addEventListener("click", function () {
+        var url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+        window.open(url, "_blank", "noopener,noreferrer,width=600,height=500");
+        close();
+      });
+    }
+
+    var xButton = share.querySelector(".share-x");
+    if (xButton) {
+      xButton.addEventListener("click", function () {
+        var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(window.location.href);
+        window.open(url, "_blank", "noopener,noreferrer,width=600,height=500");
+        close();
+      });
+    }
+
+    var copyButton = share.querySelector(".share-copy");
+    if (copyButton) {
+      copyButton.addEventListener("click", function () {
+        var label = copyButton.querySelector("span:last-child");
+        var original = label ? label.textContent : "";
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(window.location.href);
+        }
+
+        if (label) {
+          label.textContent = "Link Copied!";
+          setTimeout(function () {
+            label.textContent = original;
+          }, 1500);
+        }
+
+        close();
+      });
+    }
+  }
 });

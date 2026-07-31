@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>BetUS TV — Chiefs vs Bills</title>
+  </head>
+  <body>
+    <!-- =====================================================================
+         Video-Segment page (single video, dark hero, no CTA row). Header and
+         footer are global (backend-owned) — this file is the page body only.
+         ===================================================================== -->
+
+    <!-- =====================================================================
+         Breadcrumb — no title/subtitle bar on this page
+         ===================================================================== -->
+    <section class="section-breadcrumb w-full bg-inv-background-2">
+      <div class="mx-auto flex w-full max-w-[1462px] px-3 md:px-4">
+        <nav class="flex flex-wrap items-center gap-0.5 py-2 md:gap-1 md:py-3" aria-label="Breadcrumb">
+          <a href="index.html" class="font-body text-xs font-normal leading-4 text-inv-link transition hover:text-inv-foreground-high md:text-base md:leading-5">BetUS TV</a>
+          <svg class="size-4 shrink-0 text-inv-foreground-medium md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          <a href="index.html#replay" class="font-body text-xs font-normal leading-4 text-inv-link transition hover:text-inv-foreground-high md:text-base md:leading-5">Replay &amp; Catch Up</a>
+          <svg class="size-4 shrink-0 text-inv-foreground-medium md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          <a href="segment.html" class="font-body text-xs font-normal leading-4 text-inv-link transition hover:text-inv-foreground-high md:text-base md:leading-5">NFL</a>
+          <svg class="size-4 shrink-0 text-inv-foreground-medium md:size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          <span class="max-w-[160px] truncate font-body text-xs font-normal leading-4 text-inv-foreground-high md:max-w-[420px] md:text-base md:leading-5">Chiefs vs Bills — the sharp play everyone missed</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Hero — video, show label, title, related videos (no CTA/bell/share)
+         ===================================================================== -->
+    <section class="section-hero w-full bg-inv-background-1 pb-5 pt-4">
+      <div class="mx-auto flex w-full max-w-[1462px] flex-col gap-5 px-3 md:px-4 lg:flex-row lg:items-start lg:gap-8">
+        <!-- video + info -->
+        <div class="flex w-full min-w-0 flex-1 flex-col gap-3 lg:min-w-[720px] lg:max-w-[998px]">
+          <div class="-mx-3 md:mx-0">
+            <div class="relative aspect-[949/534] w-full overflow-hidden md:rounded-2xl">
+              <iframe
+                src="https://player.vimeo.com/video/1207428466?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                class="absolute inset-0 size-full"
+                title="Chiefs vs Bills — the sharp play everyone missed"></iframe>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3.5">
+              <p class="truncate font-body text-sm font-bold leading-[1.5] text-inv-primary-text md:text-base">Crossing Lines &middot; NFL Picks</p>
+              <p class="font-heading text-lg font-extrabold leading-[1.2] text-inv-foreground-high md:text-2xl md:leading-7">Chiefs vs Bills — the sharp play everyone missed</p>
+            </div>
+
+            <!-- related videos — mobile (full width, in flow) -->
+            <div class="flex flex-col gap-4 lg:hidden">
+              <p class="font-heading text-base font-extrabold text-inv-foreground-high">Related Videos</p>
+              <div class="flex flex-col gap-2">
+                <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+                  <img src="assets/img/segment-related-1.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+                  <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                    <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">May 22</p>
+                    <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League Final Day: Europe and Relegation on the Line</p>
+                  </div>
+                </a>
+                <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+                  <img src="assets/img/segment-related-2.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+                  <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                    <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">Sep 03</p>
+                    <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League Odds: Man City &amp; Liverpool Lead the Way</p>
+                  </div>
+                </a>
+                <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+                  <img src="assets/img/segment-related-3.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+                  <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                    <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">Aug 06</p>
+                    <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League 2024-25 Season Preview and Betting Picks</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- related videos — desktop sidebar -->
+        <aside class="hidden w-[378px] max-w-[430px] shrink-0 flex-col gap-4 lg:flex">
+          <p class="font-heading text-base font-extrabold text-inv-foreground-high">Related Videos</p>
+          <div class="flex flex-col gap-2">
+            <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+              <img src="assets/img/segment-related-1.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+              <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">May 22</p>
+                <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League Final Day: Europe and Relegation on the Line</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+              <img src="assets/img/segment-related-2.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+              <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">Sep 03</p>
+                <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League Odds: Man City &amp; Liverpool Lead the Way</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+              <img src="assets/img/segment-related-3.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+              <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">Aug 06</p>
+                <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">Premier League 2024-25 Season Preview and Betting Picks</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+              <img src="assets/img/segment-related-4.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+              <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">Jul 15</p>
+                <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">4 Storylines to Follow if You&rsquo;re Betting on the Premier League in 2024-25</p>
+              </div>
+            </a>
+            <a href="#" class="flex items-center gap-4 rounded-xl bg-inv-card-1 py-0.5 pl-0.5 pr-4 transition hover:brightness-110">
+              <img src="assets/img/segment-related-1.png" alt="" class="aspect-[130/86] w-[150px] shrink-0 rounded-[9px] object-cover" />
+              <div class="flex min-w-0 flex-1 flex-col gap-4 py-2">
+                <p class="line-clamp-1 font-body text-sm leading-[1.5] text-inv-foreground-medium">May 20</p>
+                <p class="line-clamp-2 font-heading text-base font-extrabold leading-[1.25] text-inv-foreground-high">The Clubs with the Most FIFA World Cup Winning Players</p>
+              </div>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Join Our Community
+         ===================================================================== -->
+    <section class="section-join-community w-full bg-inv-background-2 px-3 py-6 md:px-4 md:py-[47px]">
+      <div class="mx-auto flex w-full max-w-[998px] flex-col gap-4">
+        <div class="flex w-full items-center gap-2">
+          <div class="flex min-w-0 flex-1 flex-col gap-2 md:gap-3.5">
+            <h2 class="font-heading text-xl font-extrabold leading-6 text-inv-foreground-high md:text-3xl md:leading-9">Join Our Community</h2>
+            <p class="font-body text-sm font-normal leading-5 text-inv-foreground-medium md:text-base md:leading-6">Follow @BetUS for picks, drops &amp; behind-the-scenes</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- REPEAT: one <a> per network -->
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="url(#social-telegram-grad-video-segment)" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.24248 15.8309C11.9068 13.7988 15.0171 12.459 16.5733 11.8117C21.0167 9.96359 21.94 9.64255 22.5418 9.63195C22.6741 9.62962 22.9701 9.66242 23.1618 9.81797C23.3236 9.94931 23.3682 10.1267 23.3895 10.2513C23.4108 10.3758 23.4373 10.6595 23.4162 10.8811C23.1755 13.4111 22.1336 19.5507 21.6035 22.3843C21.3792 23.5833 20.9376 23.9854 20.5101 24.0247C19.5809 24.1102 18.8754 23.4107 17.9754 22.8207C16.5672 21.8976 15.7717 21.323 14.4048 20.4222C12.8251 19.3812 13.8491 18.8091 14.7494 17.874C14.985 17.6293 19.0789 13.9056 19.1581 13.5678C19.168 13.5256 19.1772 13.3681 19.0836 13.285C18.9901 13.2018 18.852 13.2303 18.7524 13.2529C18.6111 13.2849 16.3615 14.7718 12.0035 17.7136C11.3649 18.1521 10.7866 18.3658 10.2683 18.3546C9.69706 18.3422 8.59814 18.0315 7.78121 17.766C6.77921 17.4403 5.98284 17.2681 6.05218 16.7149C6.0883 16.4268 6.48507 16.1321 7.24248 15.8309Z" fill="white" />
+              <defs>
+                <linearGradient id="social-telegram-grad-video-segment" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#2AABEE" />
+                  <stop offset="1" stop-color="#229ED9" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">Telegram</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24.4351 2.53857H28.9331L19.1063 13.7699L30.6667 29.0532H21.615L14.5254 19.784L6.4133 29.0532H1.91262L12.4233 17.04L1.33337 2.53857H10.6149L17.0232 11.011L24.4351 2.53857ZM22.8565 26.3609H25.3488L9.26057 5.08942H6.58599L22.8565 26.3609Z" fill="white" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">X</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M31.3627 8.24705C31.1817 7.56627 30.8252 6.94494 30.3287 6.44526C29.8322 5.94557 29.2132 5.58505 28.5336 5.39978C26.0317 4.72705 16.0317 4.72705 16.0317 4.72705C16.0317 4.72705 6.03174 4.72705 3.52992 5.39978C2.85031 5.58505 2.23128 5.94557 1.73479 6.44526C1.23829 6.94494 0.881746 7.56627 0.700829 8.24705C0.0317384 10.7598 0.0317383 15.9998 0.0317383 15.9998C0.0317383 15.9998 0.0317384 21.2398 0.700829 23.7525C0.881746 24.4333 1.23829 25.0546 1.73479 25.5543C2.23128 26.054 2.85031 26.4145 3.52992 26.5998C6.03174 27.2725 16.0317 27.2725 16.0317 27.2725C16.0317 27.2725 26.0317 27.2725 28.5336 26.5998C29.2132 26.4145 29.8322 26.054 30.3287 25.5543C30.8252 25.0546 31.1817 24.4333 31.3627 23.7525C32.0317 21.2398 32.0317 15.9998 32.0317 15.9998C32.0317 15.9998 32.0317 10.7598 31.3627 8.24705Z" fill="#FF0302" />
+              <path d="M12.759 20.7581V11.2417L21.1227 15.9999L12.759 20.7581Z" fill="#FEFEFE" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">YouTube</span>
+          </a>
+          <a href="#" class="relative flex h-[85px] min-w-px flex-1 flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-inv-alpha-60 bg-inv-card-1 bg-radial-[62.64%_58.82%_at_49.41%_0%] from-inv-alpha-50 to-inv-alpha-0 px-2 py-3">
+            <svg class="size-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22.7633 0H17.3704V21.7971C17.3704 24.3942 15.2962 26.5276 12.715 26.5276C10.1337 26.5276 8.05955 24.3942 8.05955 21.7971C8.05955 19.2464 10.0877 17.1594 12.5767 17.0667V11.5942C7.09158 11.6869 2.66663 16.1855 2.66663 21.7971C2.66663 27.4551 7.18377 32 12.7611 32C18.3383 32 22.8555 27.4087 22.8555 21.7971V10.6203C24.8836 12.1044 27.3726 12.9855 30 13.0319V7.55942C25.9438 7.42029 22.7633 4.08116 22.7633 0Z" fill="white" />
+            </svg>
+            <span class="text-center font-heading text-sm font-bold text-inv-foreground-high">TikTok</span>
+          </a>
+          <!-- /REPEAT -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         As Featured On
+         ===================================================================== -->
+    <section class="section-featured-on flex w-full flex-col items-center gap-3 bg-inv-background-2 px-3 pt-3 pb-5 md:pb-7">
+      <p class="w-full text-center font-heading text-xs font-bold leading-[1.2] text-inv-foreground-low md:text-sm">As Featured on</p>
+      <div class="flex flex-wrap items-center justify-center gap-1 md:gap-2">
+        <img src="assets/img/logo-newsweek.svg" alt="Newsweek" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-forbes.svg" alt="Forbes" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <div class="flex h-[43px] w-[119px] items-center justify-center rounded-lg bg-inv-alpha-10 md:h-14 md:w-[157px] md:rounded-[10px]">
+          <img src="assets/img/logo-sportsillustrated.svg" alt="Sports Illustrated" class="h-[22px] w-[84px] md:h-[29px] md:w-[110px]" />
+        </div>
+        <img src="assets/img/logo-nbcsports.svg" alt="NBC Sports" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-tmz.svg" alt="TMZ" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+        <img src="assets/img/logo-foxsports.svg" alt="Fox Sports" class="h-[43px] w-[119px] md:h-14 md:w-[157px]" />
+      </div>
+    </section>
+
+    <script src="js/slider.js" defer></script>
+    <script src="js/ui.js" defer></script>
+  </body>
+</html>

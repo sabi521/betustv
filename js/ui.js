@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ---- Show more: measure real text, clip to 2 lines, "Show More" inline  */
+  /* ---- Show more: measure real text, clip to N lines, "Show More" inline -
+     3 lines on mobile, 2 lines on desktop (md: 768px), per the Figma spec. */
+  var showMoreDesktopQuery = window.matchMedia("(min-width: 768px)");
   var showMoreTexts = document.querySelectorAll(".show-more-text");
 
   for (var q = 0; q < showMoreTexts.length; q++) {
@@ -107,7 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var maxHeight = 0;
 
     function collapse() {
-      maxHeight = (parseFloat(getComputedStyle(el).lineHeight) || 24) * 2;
+      var lines = showMoreDesktopQuery.matches ? 2 : 3;
+      maxHeight = (parseFloat(getComputedStyle(el).lineHeight) || 24) * lines;
       textSpan.textContent = fullText;
 
       if (el.scrollHeight <= maxHeight + 1) {

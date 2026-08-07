@@ -560,7 +560,7 @@
                 <div class="flex w-full items-center justify-between gap-3">
                   <div class="flex min-w-0 flex-1 items-center gap-2.5">
                     <span class="size-8 shrink-0 overflow-hidden rounded-full border border-inv-border-low">
-                      <img src="assets/img/hero-logo.png" alt="" class="size-full object-cover" />
+                      <img src="assets/img/cross-line-logo.png" alt="" class="size-full object-cover" />
                     </span>
                     <span class="flex h-6 shrink-0 items-center justify-center rounded-md bg-tone-red px-2 font-heading text-sm font-extrabold text-tone-red-foreground">LIVE</span>
                     <span class="min-w-0 truncate font-heading text-xl font-extrabold text-inv-foreground-high">Crossing Lines</span>
@@ -728,7 +728,7 @@
          Jump to: — anchor links
          ===================================================================== -->
     <div class="mx-auto w-full max-w-[1462px] px-3 pt-2 md:px-4 md:pt-6">
-      <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
       <div class="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-3">
         <span class="shrink-0 font-heading text-base font-extrabold leading-5 text-fg-high">
           Jump to:
@@ -760,7 +760,7 @@
       </div>
 
       <!-- Subscribe alert -->
-      <div class="relative order-first flex w-96 items-center gap-2 overflow-hidden rounded-lg bg-warning px-3 py-2.5 outline outline-[0.25px] -outline-offset-1 outline-border-low lg:order-none lg:shrink-0">
+      <div class="relative order-first flex w-full items-center gap-2 overflow-hidden rounded-lg bg-warning px-3 py-2.5 outline outline-[0.25px] -outline-offset-1 outline-border-low lg:order-none lg:w-96 lg:max-w-[366px] lg:shrink-0">
         <svg class="size-5 shrink-0 text-fg-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M10.268 21a2 2 0 0 0 3.464 0" />
           <path d="M22 8c0-2.3-.8-4.3-2-6" />
@@ -786,12 +786,12 @@
          more are added — same markup on mobile and desktop, no JS required.
          ===================================================================== -->
     <section class="section-top-promotions mx-auto w-full max-w-[1462px] px-3 pt-6 md:px-4 md:pt-8">
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 md:gap-3">
         <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-3xl md:leading-9">Top Promotions</h2>
         <p class="font-body text-sm font-normal leading-5 text-fg-medium md:text-base md:leading-6">Bonuses for new and returning players</p>
       </div>
 
-      <div class="-mr-3 -ml-3 mt-4 flex gap-2 overflow-x-auto pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:gap-2.5 md:pl-4 md:pr-4">
+      <div class="-mr-3 -ml-3 mt-3 flex gap-2 overflow-x-auto pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:mt-3.5 md:gap-2.5 md:pl-4 md:pr-4">
         <!-- REPEAT: one <article> per promotion -->
         <article class="relative flex h-[173px] w-[343px] min-w-[343px] flex-1 flex-col items-center justify-end overflow-hidden rounded-2xl md:h-[200px]">
           <picture>
@@ -835,7 +835,7 @@
          ===================================================================== -->
     <section class="section-featured-products slider mx-auto w-full max-w-[1462px] px-3 pt-6 pb-6 md:px-4 md:pt-8 md:pb-10">
       <div class="flex w-full items-center gap-2">
-        <div class="flex min-w-0 flex-1 flex-col gap-2">
+        <div class="flex min-w-0 flex-1 flex-col gap-2 md:gap-3">
           <div class="flex items-center gap-2">
             <h2 class="font-heading text-xl font-extrabold leading-6 text-fg-high md:text-2xl md:leading-7">Featured Products</h2>
           </div>
@@ -855,7 +855,7 @@
 
       <!-- The bordered bar is the scroll content: it bleeds off both edges
            while scrolling, and pl-3/pr-3 pull it back 12px at the first/last slide. -->
-      <div class="slider-track -mr-3 -ml-3 mt-4 overflow-x-auto scroll-smooth pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
+      <div class="slider-track -mr-3 -ml-3 mt-3 overflow-x-auto scroll-smooth pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:mt-3.5 md:pl-4 md:pr-4">
         <div class="relative flex w-max items-center rounded-xl border border-border-card bg-white p-1 md:w-full">
           <div class="pointer-events-none absolute inset-1 z-0 overflow-hidden rounded-lg">
             <img src="assets/img/feat-bg.png" alt="" class="absolute inset-0 size-full object-cover" />
@@ -863,48 +863,66 @@
           </div>
 
           <!-- REPEAT: one cell per product, with a divider between cells -->
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-live-betting.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-live-betting.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Live Betting</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-odds-boost.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-odds-boost.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Odds Boost</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-props-builder.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-props-builder.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Props Builder</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-same-game-parlay.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-same-game-parlay.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Same Game Parlay</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-live-streaming.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-live-streaming.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Live Streaming</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-contests.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-contests.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Contests</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-promos.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-promos.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Promos</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-casino.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-casino.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Casino</p>
           </div>
           <div class="relative z-10 h-9 w-px shrink-0 self-center bg-border-low"></div>
-          <div class="relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
-            <img src="assets/img/feat-sports.png" alt="" class="size-9 object-contain md:size-[45px]" />
+          <div class="feat-cell relative z-10 flex w-[104px] shrink-0 flex-col items-center justify-center gap-[7px] p-3.5 md:w-auto md:flex-1">
+            <span class="feat-iconwrap relative inline-flex size-9 md:size-[45px]">
+              <img src="assets/img/feat-sports.png" alt="" class="feat-icon size-9 object-contain md:size-[45px]" />
+            </span>
             <p class="text-center font-heading text-xs font-extrabold leading-tight text-fg-high">Sports</p>
           </div>
           <!-- /REPEAT -->
@@ -1002,7 +1020,7 @@
         </div>
       </div>
 
-      <div class="slider-track -mr-3 -ml-3 mt-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
+      <div class="slider-track slider-fade-end -mr-3 -ml-3 mt-3 flex gap-2 overflow-x-auto scroll-smooth pb-1 pl-3 pr-3 no-scrollbar [-webkit-overflow-scrolling:touch] md:-mr-4 md:-ml-4 md:pl-4 md:pr-4">
         <!-- REPEAT: one <article> per short (the NEW badge only shows on new ones).
              The 6 sample shorts are listed 2x to fill the row (as in the
              design). Your foreach replaces this whole block. -->

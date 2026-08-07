@@ -40,11 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
       return Math.max(200, track.clientWidth * 0.8);
     }
 
-    // Grey out a button when there is nothing left to scroll that way.
+    // Grey out a button when there is nothing left to scroll that way, and
+    // mark the track as fully scrolled so slider-fade-end can drop its fade.
     function updateButtons() {
       var maxScroll = track.scrollWidth - track.clientWidth - 1;
       if (prev) prev.disabled = track.scrollLeft <= 0;
       if (next) next.disabled = track.scrollLeft >= maxScroll;
+      track.dataset.atEnd = track.scrollLeft >= maxScroll;
     }
 
     if (prev) {
